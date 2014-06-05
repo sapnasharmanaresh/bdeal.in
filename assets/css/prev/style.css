@@ -1,0 +1,307 @@
+/* CSS Document */
+/*********************BASE ********************************************/
+/* line 3, style.scss */
+* {
+  padding: 0px;
+  margin: 0px; }
+
+/* line 11, style.scss */
+body {
+  width: 100%;
+  background-color: #eee;
+  min-height: 500px;
+  height: auto; }
+
+/* line 17, style.scss */
+a {
+  text-decoration: none; }
+
+/* line 21, style.scss */
+table, tr, td, th {
+  border: 1px solid graytext;
+  border-collapse: collapse;
+  /*width:200px;
+  height: 70px;
+  */
+  padding: 7px; }
+
+/* line 28, style.scss */
+.no-border {
+  border: 0; }
+
+/* line 31, style.scss */
+h1 {
+  font-size: 60px; }
+
+/* line 34, style.scss */
+li {
+  list-style-type: none; }
+
+/* line 38, style.scss */
+.edit {
+  content: url(""); }
+
+/**********************LAYOUT*****************************************/
+/* line 42, style.scss */
+.row {
+  position: relative; }
+
+/* line 45, style.scss */
+.row_1 {
+  height: 120px;
+  width: auto;
+  /*   border:2px solid black; */ }
+
+/* line 50, style.scss */
+.row-2 {
+  height: 240px; }
+
+/* line 54, style.scss */
+.right {
+  float: right;
+  position: absolute;
+  right: 0; }
+
+/* line 59, style.scss */
+.top {
+  position: absolute;
+  top: 0; }
+
+/* line 64, style.scss */
+.l-link {
+  margin-top: 0; }
+
+/* line 68, style.scss */
+.lightbox {
+  height: 200px;
+  width: 300px;
+  background-color: black;
+  opacity: 0.5; }
+
+/* line 74, style.scss */
+.inline {
+  display: inline; }
+
+/* line 77, style.scss */
+.content {
+  margin-top: 100px; }
+
+/*********************MODULE***************************** */
+/* line 81, style.scss */
+.container {
+  margin-left: 200px;
+  width: 70%;
+  min-height: 500px;
+  height: auto;
+  background-color: white;
+  box-shadow: inset 1px 1px 5px #fff; }
+
+/* line 90, style.scss */
+.head {
+  position: relative;
+  background-color: #ff6633;
+  height: 70px;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.8); }
+
+/* line 99, style.scss */
+.head h1 {
+  font-family: CutBlox;
+  text-shadow: 5px 3px rgba(255, 255, 0, 0.4); }
+
+/* line 104, style.scss */
+.nav-link {
+  position: absolute;
+  top: 0px; }
+
+/* line 109, style.scss */
+.link {
+  font-family: helvetica; }
+
+/* line 112, style.scss */
+.link-background-1 {
+  background-color: #f89e84;
+  opacity: 0.6px; }
+
+/* line 118, style.scss */
+.link-color {
+  color: white; }
+
+/* line 123, style.scss */
+.link-padding {
+  padding: 25px; }
+
+/* line 129, style.scss */
+nav {
+  width: 100%;
+  background: black;
+  font-size: 15px;
+  font-family: Helvetica ,Adobe Fan Heiti Std;
+  color: white;
+  float: left; }
+
+/* line 137, style.scss */
+nav a {
+  color: white; }
+
+/* line 140, style.scss */
+nav > ul > li {
+  margin-left: 100px; }
+
+/* line 143, style.scss */
+.nav li:hover {
+  opacity: 0.8; }
+
+/* line 146, style.scss */
+.nav li {
+  float: left;
+  list-style-type: none;
+  padding: 12px; }
+
+/* line 154, style.scss */
+.nav ul {
+  display: none;
+  position: absolute;
+  background-color: black;
+  margin-left: -12px; }
+
+/* line 160, style.scss */
+.nav li:hover > ul {
+  display: block;
+  clear: both;
+  width: 120px;
+  border-radius: 10px; }
+
+/* line 168, style.scss */
+.left {
+  float: left; }
+
+/* line 171, style.scss */
+.user-info {
+  position: absolute;
+  top: 0px;
+  right: 100px; }
+
+/* line 176, style.scss */
+.top-align {
+  margin-top: 25px;
+  margin-left: 15px; }
+
+/* line 181, style.scss */
+.user-intro {
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 50px;
+  width: 50px;
+  display: none;
+  z-index: 1; }
+
+/* line 189, style.scss */
+.username:hover .user-intro {
+  position: absolute;
+  display: block;
+  color: red;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: px; }
+
+/* line 202, style.scss */
+.product-div {
+  height: 200px;
+  width: 130px;
+  border: 0.2px solid black;
+  float: left;
+  margin-left: 20px;
+  padding: 15px; }
+
+/* line 210, style.scss */
+.product-image {
+  margin-top: 40px;
+  float: left;
+  width: 250px;
+  height: 200px;
+  background-color: transparent;
+  margin-left: 100px;
+  padding: 20px; }
+
+/* line 222, style.scss */
+.product-description {
+  float: left;
+  margin-top: 60px;
+  position: relative;
+  width: 500px;
+  height: auto; }
+
+/* line 230, style.scss */
+.product-name {
+  border-bottom: 1px dotted gray; }
+
+/* line 233, style.scss */
+.description {
+  position: absolute;
+  margin-left: 25px;
+  margin-top: 150px;
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 10px;
+  width: auto; }
+
+/* line 242, style.scss */
+.price {
+  float: left;
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 50px; }
+
+/* line 248, style.scss */
+.status {
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 30px; }
+
+/* line 253, style.scss */
+.absolute {
+  position: absolute; }
+
+/* line 256, style.scss */
+.button-shop {
+  margin-left: 350px; }
+
+/* line 260, style.scss */
+.button-buy {
+  margin-left: 350px;
+  margin-top: 250px; }
+
+/* line 264, style.scss */
+.button {
+  width: 150px; }
+
+/* line 267, style.scss */
+.shop {
+  position: relative;
+  margin-left: 30px;
+  padding-top: 20px;
+  height: 150px;
+  width: auto;
+  background-color: transparent; }
+
+/* line 275, style.scss */
+.welcome {
+  margin-left: 20px; }
+
+/* line 278, style.scss */
+.shop-name {
+  font-size: 80px; }
+
+/* line 283, style.scss */
+.notification-bar {
+  position: absolute;
+  top: 25px;
+  right: 45px; }
+
+/******************************************STATES************************************************/
+/* line 289, style.scss */
+.link:hover {
+  color: #ff6633;
+  background-color: white; }
+
+/****************************************THEME***************************************************/

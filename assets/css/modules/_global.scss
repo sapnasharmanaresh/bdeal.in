@@ -1,0 +1,68 @@
+/*
+    Document   : _global
+    Created on : May 3, 2014, 3:21:49 PM
+    Author     : dell
+    Description:
+    Purpose of the stylesheet follows.
+*/
+
+/*
+    TODO customize this sample style
+    Syntax recommendation http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html
+*/
+
+root {
+    display: block;
+}
+.wrapper{
+    @include container;
+}
+.span_1_of_6{
+    @include span(1 of 6);
+}
+
+.span_2_of_6{
+    @include span(2 of 6);
+}
+
+.span_3_of_6{
+    @include span(3 of 6);
+}
+.span_4_of_6{
+    @include span(4 of 6);
+}
+.span_1_of_4{
+    @include span(1 of 4);
+}
+
+.span_1_of_6_omega{
+    @include span(1 omega of 6);
+}
+
+.span_5_of_6_omega{
+    @include span(5 omega of 6);
+}
+.row{
+    display:inline;
+}
+
+
+.display_block{
+    display: block;
+}
+.display_inline{
+    display: inline;
+}
+.left{
+    float:left;
+   
+}
+
+.right{
+      float: right;
+    }
+ 
+hr{
+   background-color: #eee;
+    
+}

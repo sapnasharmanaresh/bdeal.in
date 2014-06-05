@@ -1,0 +1,50 @@
+/*
+    Document   : states
+    Created on : Apr 9, 2014, 6:56:27 PM
+    Author     : dell
+    Description:
+    Purpose of the stylesheet follows.
+*/
+
+/*
+    TODO customize this sample style
+    Syntax recommendation http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html
+*/
+
+root {
+    display: block;
+}
+
+.show_none{
+    display:none;
+}
+
+.nav1{
+    color : grey;
+    a: hover{
+        color: black;
+    }
+     
+         li:hover{
+            border-bottom: 5px solid darken($color4,20%);
+
+        }
+}
+.user-intro{
+   @extend .show_none;
+    background-color: rgba(0,0,0,0.8);
+    position: absolute;
+    color: $white;
+    font-weight: bold;
+    z-index: 1;
+  //  text-indent: -30px;
+    @include border-radius(10px);
+}
+.user__name__hover {
+    position : relative;
+    
+    &:hover .user-intro {
+        display: block;
+        
+    }
+}

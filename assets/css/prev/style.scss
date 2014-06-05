@@ -1,0 +1,297 @@
+/* CSS Document */
+/*********************BASE ********************************************/
+*
+{
+ 
+    padding:0px;
+    margin:0px;
+
+}
+
+body
+{  width: 100%;
+    background-color:#eee;
+    min-height: 500px;
+    height:auto;
+}
+a{
+    text-decoration:none;
+    
+}
+table,tr,td,th   {
+    border:1px solid graytext;
+    border-collapse: collapse;
+    /*width:200px;
+    height: 70px;
+    */padding:7px;
+}
+.no-border{
+    border:0;
+}
+h1{
+    font-size:60px;
+}
+li{
+    list-style-type: none;
+}
+
+.edit{
+    content:url('');
+}
+/**********************LAYOUT*****************************************/
+.row{
+    position:relative;
+}
+.row_1{
+    height:120px;
+    width:auto;
+ /*   border:2px solid black; */
+}
+.row-2{
+   
+    height:240px;
+}
+.right{
+    float:right;
+    position:absolute;
+    right:0;
+}
+.top{
+    position:absolute;
+     top:0;
+    
+}
+.l-link{
+    margin-top:0;
+}
+
+.lightbox{
+    height:200px;
+    width:300px;
+    background-color:black;
+    opacity:0.5;
+}
+.inline{
+    display:inline;
+}
+.content{
+    margin-top:100px;
+}
+/*********************MODULE***************************** */
+.container{
+    margin-left: 200px;
+    width:70%;
+    min-height:500px;
+    height:auto;
+    background-color:white;
+   
+    box-shadow:inset 1px 1px 5px #fff;
+}
+.head
+{  
+    position:relative;
+    background-color:rgb(255,102,51);
+    height:70px;
+    width:100%;
+    color:rgba(255,255,255,0.8);
+
+}
+    .head h1{
+        font-family: CutBlox;
+        text-shadow: 5px 3px rgba(255,255,0,0.4);
+        
+    }
+.nav-link{
+    position:absolute;
+    top:0px;
+    
+}
+.link{
+    font-family: helvetica;
+}
+.link-background-1{
+    background-color:#f89e84;
+    opacity:0.6px;
+}
+.link-background-2{
+}
+.link-color{
+    color:white;
+    
+    
+}
+.link-padding{
+    padding:25px;
+}
+
+
+
+nav{
+    width:100%;
+    background:black;
+    font-size:15px;
+    font-family:Helvetica ,Adobe Fan Heiti Std;
+    color:white;
+    float:left;
+}
+nav a{
+    color:white;
+}
+nav > ul> li{
+    margin-left:100px;
+}
+.nav li:hover{
+    opacity:0.8;
+}
+.nav li{
+
+    float:left;
+    list-style-type:none;
+    padding:12px;
+
+}
+
+.nav ul{
+    display:none;
+    position:absolute;
+    background-color:black;
+    margin-left:-12px;
+}
+.nav li:hover > ul{ 
+    display:block;
+    clear:both;
+    width:120px;
+    border-radius:10px;
+  
+
+}
+.left{
+    float:left;
+}
+.user-info{
+    position:absolute;
+    top:0px;
+    right:100px
+}
+.top-align{
+    
+   margin-top:25px;
+   margin-left:15px;
+}
+.user-intro{
+   background-color:rgba(0,0,0,0.8);
+   height:50px;
+   width:50px;
+    display:none;
+    z-index:1;
+}
+
+.username:hover .user-intro{
+     position:absolute;
+    display:block;
+    color:red;
+    padding:10px;
+    border-radius: 5px;
+    margin-top: px;
+   
+}
+.username:hover .user-intro li{
+
+
+}
+.product-div{
+    height:200px;
+    width:130px;
+    border:0.2px solid black;
+    float:left;
+    margin-left:20px;
+    padding:15px;
+}
+.product-image {
+    margin-top:40px;
+    float:left;
+    width:250px;
+    height:200px;
+    background-color: transparent;
+    margin-left:100px;
+    padding:20px;
+}
+.product-detail img:hover {
+    
+}
+.product-description{
+    float:left;
+    margin-top:60px;
+    position:relative;
+    width:500px;
+    
+    height:auto;
+}
+.product-name{
+    border-bottom:1px dotted gray;
+}
+.description{
+    position:absolute;
+    margin-left:25px;
+    margin-top: 150px;
+    border:1px solid gray;
+    padding:10px;
+    border-radius:10px;
+    width:auto;
+}
+.price{
+    float:left;
+    position: absolute;
+    margin-top: 50px;
+   margin-left:50px;   
+}
+.status{
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 30px;
+}
+.absolute{
+    position:absolute;
+}
+.button-shop{
+    
+    margin-left:350px;
+}
+.button-buy{
+    margin-left: 350px;
+    margin-top: 250px;
+}
+.button{
+    width:150px;
+}
+.shop{
+    position: relative;
+    margin-left: 30px;
+    padding-top: 20px;
+    height:150px;
+    width:auto;
+    background-color: transparent;
+}
+.welcome{
+    margin-left: 20px;
+}
+.shop-name{
+    font-size:80px;
+    
+}
+
+.notification-bar{
+    position:absolute;
+    top:25px;
+     right:45px;
+}
+/******************************************STATES************************************************/
+.link:hover{
+    
+    color:rgb(255,102,51);
+    background-color:white;
+
+}
+
+
+/****************************************THEME***************************************************/

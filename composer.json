@@ -1,0 +1,55 @@
+{
+"require":{
+"monolog/monolog":"1.0.*",
+        "repositories": [{
+        "type": "package",
+        "package": {    
+        "name": "PHPOffice/PHPExcel",
+        "version": "1.7.8",
+        "source": {
+            "url": "https://github.com/PHPOffice/PHPExcel.git",
+            "type": "git",
+             "reference": "PHPExcel_1.7.8"
+        },
+        "autoload": {
+            "psr-0": {
+            "PHPExcel": "Classes/"
+        }
+    }
+    }
+}],
+ 
+
+"name": "phpmailer/phpmailer",
+        "type": "library",
+        "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
+        "authors": [
+        {
+        "name": "Marcus Bointon",
+                "email": "phpmailer@synchromedia.co.uk"
+                },
+        {
+        "name": "Jim Jagielski",
+                "email": "jimjag@gmail.com"
+                },
+        {
+        "name": "Andy Prevost",
+                "email": "codeworxtech@users.sourceforge.net"
+                },
+        {
+        "name": "Brent R. Matzelle"
+                }
+],
+        "require": {
+"php": ">=5.3.0"
+        },
+        "require-dev": {
+"phpdocumentor/phpdocumentor": "*",
+        "phpunit/phpunit": "4.0.*"
+        },
+        "autoload": {
+"classmap": ["class.phpmailer.php", "class.pop3.php", "class.smtp.php"]
+        },
+        "license": "LGPL-2.1"
+}
+}

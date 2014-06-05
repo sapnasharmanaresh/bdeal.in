@@ -1,0 +1,30 @@
+/*
+    Document   : _notification
+    Created on : May 10, 2014, 6:21:50 PM
+    Author     : dell
+    Description:
+    Purpose of the stylesheet follows.
+*/
+
+/*
+    TODO customize this sample style
+    Syntax recommendation http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html
+*/
+
+root {
+    display: block;
+}
+
+.notification{
+    border: 4px solid #eee;
+  //  background-color: rgba(0,0,0,.8);
+    width: 200px;
+    margin-top: 15px;
+    height: 450px;
+}
+
+.notif-block{
+    padding: 10px;
+    font-size: 13px!important;
+    text-shadow: 1px 1px #eee;
+}

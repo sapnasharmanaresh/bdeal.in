@@ -1,0 +1,24 @@
+/*
+    Document   : _fonts.scss
+    Created on : May 4, 2014, 4:14:47 PM
+    Author     : dell
+    Description:
+    Purpose of the stylesheet follows.
+*/
+
+/*
+    TODO customize this sample style
+    Syntax recommendation http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html
+*/
+
+root {
+    display: block;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('fonts/fonts/Lato-Reg.ttf');
+   
+    font-weight: normal;
+    font-style: normal;
+}

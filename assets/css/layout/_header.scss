@@ -1,0 +1,30 @@
+/* ==|====================
+   Layout/Header
+   ======================= */
+
+.l-header {
+    background-color:$white;
+   position:relative;
+   
+   @include span(12 of 12);
+   padding:0;
+        h1{
+          //  position:absolute;
+        }
+    .logo{
+        
+            }
+    .bar100{
+        @include container(100%);
+    }
+    .bar80{
+         @include container(80%);
+    }
+}
+
+.shop-name{
+    font-family: $font1;
+    font-size: 48px;
+    text-transform: lowercase;
+    margin-top:15px;
+}

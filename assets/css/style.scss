@@ -1,0 +1,45 @@
+/*
+ * SMACSS + SCSS starter v2.0
+ * 
+ */
+
+/* Compass */
+@import "compass/css3/images";
+@import "compass/css3/box-shadow";
+/* Susy */
+@import "susy";
+
+/* Tools */
+@import "tools/site-settings";
+@import "tools/mixins";
+@import "tools/functions";
+@import "tools/helpers";
+
+/* Base */
+@import "base/normalize";
+@import "base/base";
+@import "base/form";
+
+/* States */
+
+@import "states/states";
+/* Fonts */
+@import "fonts/fonts";
+
+/* Layout */
+@import "layout/header";
+@import "layout/nav";
+@import "layout/footer";
+@import "layout/constrained";
+@import "layout/main";
+
+/* Modules */
+@import "modules/btn";
+@import "modules/icons";
+@import 'modules/global';
+@import 'modules/notification';
+@import 'modules/table';
+@import 'modules/form-search';
+
+//@import "modules/animations";
+@import 'modules/formatted';

@@ -1,0 +1,76 @@
+/* ==|====================
+   Layout/Main
+   ======================= */
+
+.l-main {
+}
+
+.product-div{
+    
+}
+.products{
+    background-color: white;
+}
+.user-login,.user-register{
+           @extend .aligncenter;
+       //    background-color: red;
+                    .login__text,.register__text{
+                        font-size: 20px;
+                        font-family: 'Open sans serif';
+                        background-color:   darken($color5,10%);
+                                    color: $white;
+               
+                        padding: 10px 50px 20px 50px;
+                        margin-left: 10px;
+                    margin-bottom: 10px;
+                    }
+                    input{
+                        width:300px;
+                        margin-top: 7px;
+                    }
+        input[type='submit']{
+            margin-left : 10px;
+            background-color: lighten($color5,15%);
+            color: $white;
+            border: 0;
+            padding:15px 0 15px 0;
+            @include border-radius(5px);
+        }
+                }
+    
+.register__link{
+                    font-weight: bold;
+                    color: black;
+                }
+    .user-register{
+          //   background-color: red;
+    }    
+
+
+
+$sec:(1,7);
+@each $s in $sec{
+     .section#{$s}{
+                  
+                    @include container(100%);
+                       
+             }
+}
+
+
+$num : (3,4,5,6);
+@each $name in $num{
+        .section#{$name}{
+                  
+                    @include container(80%);
+                       padding-left:10%;
+             }
+}
+
+
+.main-content{
+    @include span(10 of 12);
+    font-size: 0.875em;
+    }
+
+

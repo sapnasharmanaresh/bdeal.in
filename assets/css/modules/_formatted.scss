@@ -1,0 +1,90 @@
+/* ==|===============
+    Module/Text formatted (rich content)
+================== */
+
+.formatted {
+    h1 {
+        text-align: center;
+        color: #fff;
+        font: 3em/1.5;
+        padding-bottom: 1em;
+        text-transform: uppercase;
+        text-shadow: 0 2px 4px rgba(#000, .5);
+        letter-spacing: -2px;
+    }
+    h2 {
+        margin: 1.3em 0 .5em;
+    }
+    p {
+        text-align: justify;
+        line-height: 1.5;
+    }
+}
+
+.search{
+    margin-left : 20%;
+    margin-top : 5%;
+        input{
+            width: 80%;
+        }
+    
+    .icon{
+        margin-top:7%;
+    }
+}
+.block{
+   
+        .block__head{
+            color: $white;
+            background-color :$btn-color;
+           // font-weight: bold;
+           
+            padding: 10px;
+            width: round(container(70) - 13);
+           margin-bottom: 5px;
+            margin-top: 10px;
+            font-size : 18px;
+        }
+    .product__body{
+        
+    }
+    .block-div{
+        border: 1px solid darken(#eee,30%);
+        margin-left : 1%;
+        padding: 10px;
+        @include border-radius(10px);
+        
+        text-align: center;
+        .block__name{
+            text-align:center;
+        }
+    }   
+}
+
+
+.current-Adver{
+    border:1px solid #eee;
+    }
+    
+.aligncenter{
+ margin-top : 10%;
+        @include  container(30%);
+        td{
+            text-align:center;
+        }      
+}
+
+#detail-box{
+    border: 1px solid #eee;
+    font-size : 0.875em;
+       #image{
+           
+        }
+    #info{
+        
+    }
+}
+
+.admin_section2{
+    height: 100%;
+}

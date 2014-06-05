@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+// ----------------------
+// == Site settings
+// ----------------------
+
+// Html 5 Element
+$audio-canvas-video: false; // True | False
+
+// Fonts
+$font1: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font2: Georgia, serif;
+$font3:'Lato'; 
+// = Colors
+// -----------------------------
+
+// Graphic chart
+$red: #df2e30;
+$blue: #1894c4;
+$facebook: #3b5998;
+$twitter: #43bfe1;
+
+$white: #fff;
+
+$color1: $red;
+$color2: $blue;
+$color3: #59042F;
+$color4 : #8BC557;
+$color5: #3BB878;
+
+// Text
+$color-text-base: #212121;
+$btn-color:#3BB878;
+// link
+$color-link: #666666;
+$color-link-hover: darken($color-link, 10%);
+
+// Mixin Placeholder
+$color-mixin-placeholder: #cdcdcd;
+
+// Selection
+$color-selection: $color1;
+
+// Btn
+$bg-btn: #555;
+$bg-btn-hover: darken($bg-btn, 10%);
+$clr-btn: #212121;
+$clr-btn-hover: darken($clr-btn, 10%);
+
+// = Grid
+// -----------------------------
+
+// Max width wrapper
+$wrapper-width: pxtoem(1140, 16);
+
+// = Prefix
+// -----------------------------
+
+$prefix-for-webkit:    true !default;
+$prefix-for-mozilla:   true !default;
+$prefix-for-microsoft: true !default;
+$prefix-for-opera:     true !default;
+$prefix-for-spec:      true !default; // required for keyframe mixin
+
+// = Responsive
+// -----------------------------
+
+$width-desktop: 75em; // 1200/16
+$width-tablet: 62em; // 992/16
+$width-mobile: 48em; // 768/16
+
+
+// = Nav
+//------------------------------
+
+$nav-color:black;
+
+
+// = Susy
+//--------------------------------
+
+$susy:(
+    columns: 12,
+    gutters:1/4,
+    math: fluid,
+    output: float,
+    gutter-position: inside,
+    float: ltr,
+    container-position: center,
+    container: auto,
+    column-width: false,
+    global-box-sizing: content-box,
+    last-flow : to,
+    debug: (
+            image: hide,
+            color : rgba(#66f, .25),
+            output: background,
+            toggle: top right,
+        ),
+       use-custom:(
+            background-image: true,
+            background-options: false,
+            box-sizing: true,
+            clearfix: false,
+            rem:true,
+)
+
+);

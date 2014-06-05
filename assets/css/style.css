@@ -1,0 +1,1484 @@
+/*
+ * SMACSS + SCSS starter v2.0
+ * 
+ */
+/* Compass */
+/* Susy */
+/* Tools */
+/* ===========================
+   Tools/Helpers
+   =========================== */
+/*
+ * Image replacement
+ */
+/* line 9, tools/_helpers.scss */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px; }
+
+/* line 17, tools/_helpers.scss */
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%; }
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+/* line 28, tools/_helpers.scss */
+.hidden {
+  display: none !important;
+  visibility: hidden; }
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+/* line 37, tools/_helpers.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+/* line 53, tools/_helpers.scss */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+/* line 67, tools/_helpers.scss */
+.invisible {
+  visibility: hidden; }
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+/* line 83, tools/_helpers.scss */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
+
+/* line 89, tools/_helpers.scss */
+.clearfix:after {
+  clear: both; }
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+/* line 98, tools/_helpers.scss */
+.clearfix {
+  *zoom: 1; }
+
+/* =Layout
+------------------- */
+/* line 106, tools/_helpers.scss */
+.ul-list-inline {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  /* line 224, tools/_mixins.scss */
+  .ul-list-inline li {
+    display: inline-block;
+    vertical-align: middle; }
+    /* line 14, tools/_mixins.scss */
+    .lt-ie8 .ul-list-inline li {
+      display: inline;
+      zoom: 1; }
+
+/* =Fonts
+------------------- */
+/* Chart Colors */
+/* line 114, tools/_helpers.scss */
+.f-color1 {
+  color: #df2e30; }
+
+/* line 117, tools/_helpers.scss */
+.f-color2 {
+  color: #1894c4; }
+
+/* =Wordpress alignment
+-------------------*/
+/* line 125, tools/_helpers.scss */
+.alignleft {
+  float: left; }
+
+/* line 129, tools/_helpers.scss */
+.alignright {
+  float: right; }
+
+/* line 133, tools/_helpers.scss */
+.aligncenter, .user-login, .user-register {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+/* line 139, tools/_helpers.scss */
+.txtleft {
+  text-align: left; }
+
+/* line 142, tools/_helpers.scss */
+.txtright {
+  text-align: right; }
+
+/* Base */
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 9, base/_normalize.scss */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+/* line 19, base/_normalize.scss */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+/* line 29, base/_normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+/* line 49, base/_normalize.scss */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 62, base/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+/* line 72, base/_normalize.scss */
+[hidden],
+template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 84, base/_normalize.scss */
+a {
+  background: transparent; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+/* line 92, base/_normalize.scss */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+/* line 104, base/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 112, base/_normalize.scss */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+/* line 121, base/_normalize.scss */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 130, base/_normalize.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 139, base/_normalize.scss */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 148, base/_normalize.scss */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 156, base/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+/* line 164, base/_normalize.scss */
+sup {
+  top: -0.5em; }
+
+/* line 168, base/_normalize.scss */
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+/* line 179, base/_normalize.scss */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+/* line 187, base/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+/* line 198, base/_normalize.scss */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 206, base/_normalize.scss */
+hr {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: centent-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+/* line 217, base/_normalize.scss */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+/* line 225, base/_normalize.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 248, base/_normalize.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10.
+ */
+/* line 262, base/_normalize.scss */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8+, and Opera
+ * Correct `select` style inheritance in Firefox.
+ */
+/* line 273, base/_normalize.scss */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 286, base/_normalize.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 298, base/_normalize.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 307, base/_normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 318, base/_normalize.scss */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+/* line 330, base/_normalize.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+/* line 342, base/_normalize.scss */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 353, base/_normalize.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+/* line 366, base/_normalize.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 375, base/_normalize.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 386, base/_normalize.scss */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9.
+ */
+/* line 395, base/_normalize.scss */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+/* line 404, base/_normalize.scss */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 415, base/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 420, base/_normalize.scss */
+td,
+th {
+  padding: 0px; }
+
+/* ===========================
+   Base
+   =========================== */
+/* line 5, base/_base.scss */
+html, body {
+  height: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 1.5;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 12, ../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+  html:after, body:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+/* line 16, base/_base.scss */
+a {
+  color: #999999;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  /* line 21, base/_base.scss */
+  a:hover {
+    color: #4d4d4d; }
+
+/* line 26, base/_base.scss */
+::-moz-selection {
+  background: #df2e30;
+  color: #fff;
+  text-shadow: none; }
+
+/* line 31, base/_base.scss */
+::selection {
+  background: #df2e30;
+  color: #fff;
+  text-shadow: none; }
+
+/* line 37, base/_base.scss */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+/* ==|====================
+   Base/Form
+   ======================= */
+/* line 5, base/_form.scss */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="search"],
+textarea {
+  font-size: 1em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: #666;
+  padding: .5em;
+  border: 1px solid #bfbfbf;
+  outline: 0;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  background-color: #f7f7f7; }
+  /* line 54, tools/_mixins.scss */
+  input[type="text"]::-webkit-input-placeholder,
+  input[type="email"]::-webkit-input-placeholder,
+  input[type="password"]::-webkit-input-placeholder,
+  input[type="date"]::-webkit-input-placeholder,
+  input[type="search"]::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder {
+    color: #cdcdcd; }
+  /* line 57, tools/_mixins.scss */
+  input[type="text"]:-moz-placeholder,
+  input[type="email"]:-moz-placeholder,
+  input[type="password"]:-moz-placeholder,
+  input[type="date"]:-moz-placeholder,
+  input[type="search"]:-moz-placeholder,
+  textarea:-moz-placeholder {
+    color: #cdcdcd; }
+  /* line 60, tools/_mixins.scss */
+  input[type="text"]:-ms-input-placeholder,
+  input[type="email"]:-ms-input-placeholder,
+  input[type="password"]:-ms-input-placeholder,
+  input[type="date"]:-ms-input-placeholder,
+  input[type="search"]:-ms-input-placeholder,
+  textarea:-ms-input-placeholder {
+    color: #cdcdcd; }
+  /* line 23, base/_form.scss */
+  input[type="text"]:hover,
+  input[type="email"]:hover,
+  input[type="password"]:hover,
+  input[type="date"]:hover,
+  input[type="search"]:hover,
+  textarea:hover {
+    border-color: #a5a5a5; }
+  /* line 27, base/_form.scss */
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  input[type="date"]:focus,
+  input[type="search"]:focus,
+  textarea:focus {
+    border-color: #999; }
+
+/* States */
+/*
+    Document   : states
+    Created on : Apr 9, 2014, 6:56:27 PM
+    Author     : dell
+    Description:
+    Purpose of the stylesheet follows.
+*/
+/*
+    TODO customize this sample style
+    Syntax recommendation http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html
+*/
+/* line 14, states/_states.scss */
+root {
+  display: block; }
+
+/* line 18, states/_states.scss */
+.show_none, .user-intro {
+  display: none; }
+
+/* line 22, states/_states.scss */
+.nav1 {
+  color: grey;
+  a: hover;
+    a-color: black; }
+  /* line 28, states/_states.scss */
+  .nav1 li:hover {
+    border-bottom: 5px solid #59872f; }
+
+/* line 33, states/_states.scss */
+.user-intro {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  z-index: 1;
+  -moz-border-radius: 10px;
+  border-radius: 10px; }
+
+/* line 43, states/_states.scss */
+.user__name__hover {
+  position: relative; }
+  /* line 46, states/_states.scss */
+  .user__name__hover:hover .user-intro {
+    display: block; }
+
+/* Fonts */
+/*
+    Document   : _fonts.scss
+    Created on : May 4, 2014, 4:14:47 PM
+    Author     : dell
+    Description:
+    Purpose of the stylesheet follows.
+*/
+/*
+    TODO customize this sample style
+    Syntax recommendation http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html
+*/
+/* line 14, fonts/_fonts.scss */
+root {
+  display: block; }
+
+@font-face {
+  font-family: 'Lato';
+  src: url("fonts/fonts/Lato-Reg.ttf");
+  font-weight: normal;
+  font-style: normal; }
+/* Layout */
+/* ==|====================
+   Layout/Header
+   ======================= */
+/* line 5, layout/_header.scss */
+.l-header {
+  background-color: white;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+  padding: 0; }
+  /* line 17, layout/_header.scss */
+  .l-header .bar100 {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto; }
+    /* line 12, ../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+    .l-header .bar100:after {
+      content: " ";
+      display: block;
+      clear: both; }
+  /* line 20, layout/_header.scss */
+  .l-header .bar80 {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto; }
+    /* line 12, ../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+    .l-header .bar80:after {
+      content: " ";
+      display: block;
+      clear: both; }
+
+/* line 25, layout/_header.scss */
+.shop-name {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 48px;
+  text-transform: lowercase;
+  margin-top: 15px; }
+
+/* ==|====================
+    Layout/Nav
+======================= */
+/* line 5, layout/_nav.scss */
+.l-nav {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 12, ../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+  .l-nav:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+/* line 12, layout/_nav.scss */
+.nav1 ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+/* line 17, layout/_nav.scss */
+.nav1 > li {
+  margin-left: 10%;
+  font-weight: bold;
+  border-bottom: 5px solid white; }
+  /* line 21, layout/_nav.scss */
+  .nav1 > li:hover {
+    border-bottom: 5px solid #59872f; }
+/* line 26, layout/_nav.scss */
+.nav1 li {
+  display: inline-block; }
+/* line 31, layout/_nav.scss */
+.nav1 a {
+  display: block;
+  padding: 6px 12px; }
+/* line 36, layout/_nav.scss */
+.nav1 li ul {
+  display: none; }
+/* line 39, layout/_nav.scss */
+.nav1 li:hover > ul {
+  display: block;
+  background-color: #eee;
+  position: absolute; }
+  /* line 43, layout/_nav.scss */
+  .nav1 li:hover > ul li {
+    font-weight: normal; }
+
+/* line 50, layout/_nav.scss */
+.nav2, .nav3 {
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 16.66667%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+  background: url("img/bg2.png");
+  color: #666666; }
+  /* line 56, layout/_nav.scss */
+  .nav2 ul li, .nav3 ul li {
+    position: relative;
+    list-style: none;
+    text-indent: -30px; }
+  /* line 63, layout/_nav.scss */
+  .nav2 li > ul, .nav3 li > ul {
+    margin-left: -20px; }
+
+/* line 71, layout/_nav.scss */
+.topbar {
+  height: 30px;
+  background: url("img/bg1.png");
+  opacity: 0.8;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+  font-weight: 500;
+  padding: 0; }
+  /* line 78, layout/_nav.scss */
+  .topbar a {
+    padding: 0 20px 0 20px; }
+  /* line 81, layout/_nav.scss */
+  .topbar .separator {
+    color: #e6e6e6; }
+
+/* line 85, layout/_nav.scss */
+.nav3 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 16.66667%;
+  float: right;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%; }
+
+/* ==|====================
+    Layout/Footer
+======================= */
+/* line 8, layout/_footer.scss */
+.l-footer .foot {
+  color: white; }
+  /* line 10, layout/_footer.scss */
+  .l-footer .foot a {
+    color: white; }
+  /* line 14, layout/_footer.scss */
+  .l-footer .foot li {
+    list-style-type: none; }
+/* line 20, layout/_footer.scss */
+.l-footer .foot-1 {
+  padding: 60px;
+  background: url("img/bg1.png");
+  font-family: "Lato", sans-serif; }
+  /* line 24, layout/_footer.scss */
+  .l-footer .foot-1 .foot-1__align {
+    text-align: center; }
+  /* line 28, layout/_footer.scss */
+  .l-footer .foot-1 .foot-1__text1 {
+    font-size: 35px; }
+  /* line 34, layout/_footer.scss */
+  .l-footer .foot-1 .font-1__text2 {
+    margin-left: 2%; }
+    /* line 36, layout/_footer.scss */
+    .l-footer .foot-1 .font-1__text2 .font-1__btn {
+      color: #fff;
+      background-color: #3bb878 !important;
+      line-height: 1.33;
+      padding: 1% 10% 1% 10%; }
+      /* line 41, layout/_footer.scss */
+      .l-footer .foot-1 .font-1__text2 .font-1__btn:hover {
+        background-color: #287e52 !important; }
+/* line 47, layout/_footer.scss */
+.l-footer .foot-2 {
+  height: 300px;
+  padding-top: 10px;
+  background: url("img/bg2.png"); }
+  /* line 51, layout/_footer.scss */
+  .l-footer .foot-2 .container {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto; }
+    /* line 12, ../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+    .l-footer .foot-2 .container:after {
+      content: " ";
+      display: block;
+      clear: both; }
+    /* line 55, layout/_footer.scss */
+    .l-footer .foot-2 .container ul {
+      position: relative; }
+      /* line 58, layout/_footer.scss */
+      .l-footer .foot-2 .container ul li {
+        position: relative;
+        left: -36px; }
+    /* line 64, layout/_footer.scss */
+    .l-footer .foot-2 .container li a {
+      display: block;
+      color: #A6A6A6; }
+/* line 70, layout/_footer.scss */
+.l-footer .foot-3 {
+  padding-top: 20px;
+  background: url("img/bg3.png");
+  height: 60px; }
+  /* line 74, layout/_footer.scss */
+  .l-footer .foot-3 .copyright {
+    color: #666666;
+    font-size: 16px;
+    text-align: center; }
+    /* line 79, layout/_footer.scss */
+    .l-footer .foot-3 .copyright span {
+      padding-left: 30px; }
+
+/* ==|====================
+   Layout/Constrained
+   ======================= */
+/* line 5, layout/_constrained.scss */
+.l-constrained {
+  max-width: pxtoem(1140, 16);
+  padding: 0 1.25em;
+  margin: 0 auto;
+  background-color: #1894c4; }
+
+/* ==|====================
+   Layout/Main
+   ======================= */
+/* line 11, layout/_main.scss */
+.products {
+  background-color: white; }
+
+/* line 17, layout/_main.scss */
+.user-login .login__text, .user-login .register__text, .user-register .login__text, .user-register .register__text {
+  font-size: 20px;
+  font-family: 'Open sans serif';
+  background-color: #2f915f;
+  color: white;
+  padding: 10px 50px 20px 50px;
+  margin-left: 10px;
+  margin-bottom: 10px; }
+/* line 27, layout/_main.scss */
+.user-login input, .user-register input {
+  width: 300px;
+  margin-top: 7px; }
+/* line 31, layout/_main.scss */
+.user-login input[type='submit'], .user-register input[type='submit'] {
+  margin-left: 10px;
+  background-color: #6fd19f;
+  color: white;
+  border: 0;
+  padding: 15px 0 15px 0;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
+
+/* line 41, layout/_main.scss */
+.register__link {
+  font-weight: bold;
+  color: black; }
+
+/* line 53, layout/_main.scss */
+.section1 {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 12, ../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+  .section1:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+/* line 53, layout/_main.scss */
+.section7 {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 12, ../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+  .section7:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+/* line 63, layout/_main.scss */
+.section3 {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10%; }
+  /* line 12, ../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+  .section3:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+/* line 63, layout/_main.scss */
+.section4 {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10%; }
+  /* line 12, ../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+  .section4:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+/* line 63, layout/_main.scss */
+.section5 {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10%; }
+  /* line 12, ../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+  .section5:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+/* line 63, layout/_main.scss */
+.section6 {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10%; }
+  /* line 12, ../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+  .section6:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+/* line 71, layout/_main.scss */
+.main-content {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 83.33333%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+  font-size: 0.875em; }
+
+/* Modules */
+/* ==|====================
+   Module/Button
+   ======================= */
+/* line 5, modules/_btn.scss */
+.btn, .btn-color1, .btn-color2, .btn-color3 {
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF9F9F9', endColorstr='#FFE9E9E9');
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  padding: .2em .7em;
+  border: solid 1px #cacaca;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.15);
+  text-shadow: 0 -1px 1px #787878;
+  box-shadow: 0 px rgba(255, 255, 255, 0.75);
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer; }
+  /* line 14, tools/_mixins.scss */
+  .lt-ie8 .btn, .lt-ie8 .btn-color1, .lt-ie8 .btn-color2, .lt-ie8 .btn-color3 {
+    display: inline;
+    zoom: 1; }
+  /* line 23, modules/_btn.scss */
+  .btn:active, .btn-color1:active, .btn-color2:active, .btn-color3:active {
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2); }
+
+/* line 41, modules/_btn.scss */
+.btn-color1 {
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFDF2E30', endColorstr='#FFBD1D1F');
+  background-image: -moz-linear-gradient(#df2e30, #bd1d1f);
+  background-image: -webkit-linear-gradient(#df2e30, #bd1d1f);
+  background-image: linear-gradient(#df2e30, #bd1d1f);
+  color: #fff;
+  border-color: #bd1d1f;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); }
+  /* line 36, modules/_btn.scss */
+  .btn-color1:hover {
+    background: #bd1d1f; }
+
+/* line 44, modules/_btn.scss */
+.btn-color2 {
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF1894C4', endColorstr='#FF127297');
+  background-image: -moz-linear-gradient(#1894c4, #127297);
+  background-image: -webkit-linear-gradient(#1894c4, #127297);
+  background-image: linear-gradient(#1894c4, #127297);
+  color: #fff;
+  border-color: #127297;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); }
+  /* line 36, modules/_btn.scss */
+  .btn-color2:hover {
+    background: #127297; }
+
+/* line 48, modules/_btn.scss */
+.btn-color3 {
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF3BB878', endColorstr='#FF2F915F');
+  background-image: -moz-linear-gradient(#3bb878, #2f915f);
+  background-image: -webkit-linear-gradient(#3bb878, #2f915f);
+  background-image: linear-gradient(#3bb878, #2f915f);
+  color: #fff;
+  border-color: #2f915f;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); }
+  /* line 36, modules/_btn.scss */
+  .btn-color3:hover {
+    background: #2f915f; }
+
+/* line 53, modules/_btn.scss */
+.createAccount {
+  margin-top: 30px; }
+
+/* ==|====================
+   Module/Icons
+   Method by @vtcreative
+   Documentation : http://goo.gl/kWyRmT
+   ======================= */
+/*
+$sprites: sprite-map("icons/*.png");
+$sprites2x: sprite-map("icons-2x/*.png");
+
+[class^="icon-"],
+[class*=" icon-"] {
+  background-repeat: no-repeat;
+  display: inline-block;
+  background-image: sprite-url($sprites);
+
+  @media (-webkit-min-device-pixel-ratio: 1.5),
+         (-o-min-device-pixel-ratio: 3/2),
+         (min-device-pixel-ratio: 1.5) {
+    background-image: sprite-url($sprites2x);
+    background-size: ceil(image-width(sprite-path($sprites2x)) / 2) auto;
+  }
+}
+
+@mixin sprite-background($name) {
+  background-position: sprite-position($sprites, $name);
+  height: image-height(sprite-file($sprites, $name));
+  width: image-width(sprite-file($sprites, $name));
+
+  @media (-webkit-min-device-pixel-ratio: 1.5),
+         (-o-min-device-pixel-ratio: 3/2),
+         (min-device-pixel-ratio: 1.5) {
+    background-position: 0 round(nth(sprite-position($sprites2x, $name), 2) / 2);
+  }
+}
+
+.icon-facebook {
+  //@include sprite-background(facebook);
+}
+*/
+/*
+    Document   : _global
+    Created on : May 3, 2014, 3:21:49 PM
+    Author     : dell
+    Description:
+    Purpose of the stylesheet follows.
+*/
+/*
+    TODO customize this sample style
+    Syntax recommendation http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html
+*/
+/* line 14, modules/_global.scss */
+root {
+  display: block; }
+
+/* line 17, modules/_global.scss */
+.wrapper {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 12, ../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+  .wrapper:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+/* line 20, modules/_global.scss */
+.span_1_of_6 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 16.66667%;
+  float: left;
+  padding-left: 1.66667%;
+  padding-right: 1.66667%; }
+
+/* line 24, modules/_global.scss */
+.span_2_of_6 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 33.33333%;
+  float: left;
+  padding-left: 1.66667%;
+  padding-right: 1.66667%; }
+
+/* line 28, modules/_global.scss */
+.span_3_of_6 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 50%;
+  float: left;
+  padding-left: 1.66667%;
+  padding-right: 1.66667%; }
+
+/* line 31, modules/_global.scss */
+.span_4_of_6 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 66.66667%;
+  float: left;
+  padding-left: 1.66667%;
+  padding-right: 1.66667%; }
+
+/* line 34, modules/_global.scss */
+.span_1_of_4 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 25%;
+  float: left;
+  padding-left: 2.5%;
+  padding-right: 2.5%; }
+
+/* line 38, modules/_global.scss */
+.span_1_of_6_omega {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 16.66667%;
+  float: right;
+  padding-left: 1.66667%;
+  padding-right: 1.66667%; }
+
+/* line 42, modules/_global.scss */
+.span_5_of_6_omega {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 83.33333%;
+  float: right;
+  padding-left: 1.66667%;
+  padding-right: 1.66667%; }
+
+/* line 45, modules/_global.scss */
+.row {
+  display: inline; }
+
+/* line 50, modules/_global.scss */
+.display_block {
+  display: block; }
+
+/* line 53, modules/_global.scss */
+.display_inline {
+  display: inline; }
+
+/* line 56, modules/_global.scss */
+.left {
+  float: left; }
+
+/* line 61, modules/_global.scss */
+.right {
+  float: right; }
+
+/* line 65, modules/_global.scss */
+hr {
+  background-color: #eee; }
+
+/*
+    Document   : _notification
+    Created on : May 10, 2014, 6:21:50 PM
+    Author     : dell
+    Description:
+    Purpose of the stylesheet follows.
+*/
+/*
+    TODO customize this sample style
+    Syntax recommendation http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html
+*/
+/* line 14, modules/_notification.scss */
+root {
+  display: block; }
+
+/* line 18, modules/_notification.scss */
+.notification {
+  border: 4px solid #eee;
+  width: 200px;
+  margin-top: 15px;
+  height: 450px; }
+
+/* line 26, modules/_notification.scss */
+.notif-block {
+  padding: 10px;
+  font-size: 13px !important;
+  text-shadow: 1px 1px #eee; }
+
+/* ==|=====================
+   Module/Table
+   ======================== */
+/* line 5, modules/_table.scss */
+.table {
+  background: #fff;
+  -moz-box-shadow: 0, 1px, 3px, rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0, 1px, 3px, rgba(0, 0, 0, 0.12);
+  box-shadow: 0, 1px, 3px, rgba(0, 0, 0, 0.12);
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  font-size: .875em;
+  /* 14/16 */
+  width: 100%;
+  /* Medium Screens */ }
+  /* line 13, modules/_table.scss */
+  .table th {
+    background: #3bb878;
+    color: #fff;
+    padding: .5em .5em .5em 0;
+    text-transform: uppercase;
+    font-weight: 300; }
+    /* line 23, modules/_table.scss */
+    .table th:first-child {
+      padding-left: 1.2em;
+      -moz-border-radius: 2px 0 0 0;
+      border-radius: 2px 0 0 0; }
+    /* line 27, modules/_table.scss */
+    .table th:last-child {
+      -moz-border-radius: 0 2px 0 0;
+      border-radius: 0 2px 0 0; }
+  /* line 32, modules/_table.scss */
+  .table tr td {
+    border-bottom: 1px dashed #b6b6b6;
+    padding: .7em 3em .7em 0;
+    text-align: center; }
+    /* line 36, modules/_table.scss */
+    .table tr td:first-child {
+      padding-left: 1.2em; }
+    /* line 39, modules/_table.scss */
+    .table tr td:last-child {
+      padding-right: .7em; }
+  /* line 43, modules/_table.scss */
+  .table tr:last-child td {
+    border-bottom: none; }
+  @media (max-width: 54em) {
+    /* line 5, modules/_table.scss */
+    .table {
+      font-size: .8em; }
+      /* line 51, modules/_table.scss */
+      .table tr td {
+        padding-right: 2em; } }
+
+/* ==|================
+   Module/Form search
+   =================== */
+/* line 6, modules/_form-search.scss */
+.form-search input[type="text"],
+.form-search .formt-text {
+  -moz-border-radius: 2px 0 0 2px;
+  border-radius: 2px 0 0 2px;
+  border-right: none; }
+/* line 11, modules/_form-search.scss */
+.form-search .btn, .form-search .btn-color1, .form-search .btn-color2, .form-search .btn-color3 {
+  -moz-border-radius: 0 2px 2px 0;
+  border-radius: 0 2px 2px 0;
+  vertical-align: top;
+  padding: .35em .6em; }
+
+/* .form-search */
+/* ==|===============
+    Module/Text formatted (rich content)
+================== */
+/* line 6, modules/_formatted.scss */
+.formatted h1 {
+  text-align: center;
+  color: #fff;
+  font: 3em/1.5;
+  padding-bottom: 1em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: -2px; }
+/* line 15, modules/_formatted.scss */
+.formatted h2 {
+  margin: 1.3em 0 .5em; }
+/* line 18, modules/_formatted.scss */
+.formatted p {
+  text-align: justify;
+  line-height: 1.5; }
+
+/* line 24, modules/_formatted.scss */
+.search {
+  margin-left: 20%;
+  margin-top: 5%; }
+  /* line 27, modules/_formatted.scss */
+  .search input {
+    width: 80%; }
+  /* line 31, modules/_formatted.scss */
+  .search .icon {
+    margin-top: 7%; }
+
+/* line 37, modules/_formatted.scss */
+.block .block__head {
+  color: white;
+  background-color: #3bb878;
+  padding: 10px;
+  width: 87%;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  font-size: 18px; }
+/* line 51, modules/_formatted.scss */
+.block .block-div {
+  border: 1px solid #a2a2a2;
+  margin-left: 1%;
+  padding: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-align: center; }
+  /* line 58, modules/_formatted.scss */
+  .block .block-div .block__name {
+    text-align: center; }
+
+/* line 65, modules/_formatted.scss */
+.current-Adver {
+  border: 1px solid #eee; }
+
+/* line 69, modules/_formatted.scss */
+.aligncenter, .user-login, .user-register {
+  margin-top: 10%;
+  max-width: 30%;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 12, ../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+  .aligncenter:after, .user-login:after, .user-register:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  /* line 72, modules/_formatted.scss */
+  .aligncenter td, .user-login td, .user-register td {
+    text-align: center; }
+
+/* line 77, modules/_formatted.scss */
+#detail-box {
+  border: 1px solid #eee;
+  font-size: 0.875em; }
+
+/* line 88, modules/_formatted.scss */
+.admin_section2 {
+  height: 100%; }
