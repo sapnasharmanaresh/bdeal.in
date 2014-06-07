@@ -4,7 +4,7 @@
  */
 ?>
 <?php
-if(isset($_GET['id'])){
+if(isset($this->detail_id)){
    // print_r($this->detail);
 foreach($this->detail as $k=>$v)
 {   
@@ -87,7 +87,7 @@ foreach($this->detail as $k=>$v)
             <td><?php echo $value['username']; ?></td>
             <td><?php echo $value['shop_name']; ?></td>
             <td><?php echo $value['description'];?></td>
-            <td><a href="?id=<?php echo $value['id']; ?>">More Details</a></td>
+            <td><a href="/<?php echo $value['id']; ?>">More Details</a></td>
 
         </tr>
     

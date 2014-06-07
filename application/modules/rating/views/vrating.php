@@ -1,5 +1,5 @@
 Give rating to this product
-Select
+
 <form name="rate-count" action="" method="post">
 <select name="rate">
     <option>1</option>

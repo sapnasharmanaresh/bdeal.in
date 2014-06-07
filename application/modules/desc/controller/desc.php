@@ -10,10 +10,9 @@ class Desc extends Controller {
         
     }
     
-    public function desc($page){
-        if($page == 'aboutus'){
-           //
-        }
+    public function overview($page){
+           $p = $this->model->getinfo($page);
+     
     }
     public function aboutus(){
      $p = $this->model->get('aboutus');

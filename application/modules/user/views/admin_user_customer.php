@@ -1,7 +1,8 @@
 
 <?php
 
-if (isset($_GET['id'])) {
+if (isset($this->detail_id)) {
+    $detail_id = $this->detail_id;
     foreach($this->detail as $k => $v)
     ?>
     <div id="emp-detail">
@@ -69,7 +70,7 @@ if (isset($_GET['id'])) {
     
     Search<input type="text" name="search-table"> 
   List of all the Customers
-<table>
+<table class='table'>
     <tr>
         <th>Sr no</th>
         <th>Customer_name</th>
@@ -84,7 +85,7 @@ if (isset($_GET['id'])) {
             <td><?php echo $i; ?></td>
             <td><?php echo $value['username']; ?></td>
             <td><?php echo $value['ordered-items'] ?></td>
-            <td><a href="?id=<?php echo $value['id']; ?>">More Details</a></td>
+            <td><a href="/<?php echo $value['id']; ?>">More Details</a></td>
 
         </tr>
    

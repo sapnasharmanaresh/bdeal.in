@@ -88,3 +88,51 @@
 .admin_section2{
     height: 100%;
 }
+
+.generate_pdf{
+   
+   // @extend .block-border;
+}
+
+.block-border{
+    border:3px solid darken(#eee,10%);
+    padding:10px;
+}
+
+.emailToFriend{
+    //@extend .block-border;
+}
+.side-block{
+    @extend .block-border;
+        input{
+            margin-top:5px;
+        }
+}
+.status{
+    font-size: 25px;
+}
+.availability__group{
+    margin-top:-50px;
+}
+.success{
+    color: $color3;
+    
+}
+.fail{
+    color: $color1;
+}
+
+.review{
+        .review__head{
+                    
+        }
+    .review__body{
+        
+    }
+}
+
+.track{
+    background-color: #eee;
+    width: 500px;
+   @include border-radius(10px);
+}

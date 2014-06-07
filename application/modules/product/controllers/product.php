@@ -30,21 +30,28 @@ class Product extends Controller {
         $this->view->renderModule('product', 'product-thumbnail');
     }
 
-    public function display_detail() {
+    public function display_detail($product_id) {
 
-        $this->view->detail = $this->model->display_detail();
+        $this->view->detail = $this->model->display_detail($product_id);
 //          print_r($this->view->detail);
         $title = $this->view->detail[0]['name'];
         $this->header($title);
         $this->view->module = 'product';
         $this->view->file = 'product_detail';
-
+        $this->view->data = $product_id;
 
         $this->view->renderModule('product', 'template');
+        $this->footer();
+        
     }
 
-    public function shop($name) {
-        Modules::run('shops', 'shop', array($name));
+    public function shop($name,$product_id=null) {
+        if($product_id != null){
+        Modules::run('shop', 'visit', array($name,$product_id));
+    }
+    else{
+     Modules::run('shop', 'visit', array($name));
+    } 
     }
 
     public function category($cat_name, $subcat_name = false) {
@@ -78,8 +85,8 @@ class Product extends Controller {
         // Modules::run('search', 'searchSidebar');
     }
 
-    public function product_detail() {
-        $this->view->detail = $this->model->display_detail();
+    public function product_detail($product_id) {
+        $this->view->detail = $this->model->display_detail($product_id);
         $this->view->renderModule('product', 'product-detail');
     }
 

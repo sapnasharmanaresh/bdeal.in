@@ -13,7 +13,13 @@ class WishList extends Controller {
         $this->view->renderModule('wishList','vwishList');
     }
     public function addToList(){
+      
+        if(!isset($_SESSION['loggedIn'])){
+            echo '1';
+        }
+        else{
         $this->model->addToList();
+    }
     }
     
     public function listCount(){

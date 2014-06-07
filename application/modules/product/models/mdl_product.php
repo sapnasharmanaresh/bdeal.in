@@ -15,8 +15,8 @@ class Mdl_product extends Model {
         return $prod;
     }
 
-    public function display_detail() {
-        $product_id = $_GET['id'];
+    public function display_detail($product_id) {
+     
         $detail = $this->db->select("SELECT product.*,detail.*,category.category_name,subcategory.subcategory,shop.shop_name                                                       
                                                             FROM product 
                	LEFT JOIN category 

@@ -66,3 +66,8 @@ console.log(divID);
         chart.draw(data, options);
       }
 }
+
+function trackRequest(){
+    $('#track').slideToggle("slow");
+
+}

@@ -100,11 +100,11 @@ class User extends Controller {
         $this->add_emp();
     }
 
-    public function employee() {
+    public function employee($detail_id=null) {
 
-        if (isset($_GET['id'])) {
+        if ($detail_id !=null) {
 
-            $this->view->detail = $this->model->detail();
+            $this->view->detail = $this->model->detail($detail_id);
         }
         $this->view->res = $this->model->employee();
         $this->view->renderModule('user', 'admin_user_employee');

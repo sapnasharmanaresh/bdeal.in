@@ -6,11 +6,11 @@ class Advertisement extends Controller {
         $this->loadModel('advertisement');
     }
     
-    public function owner_adver(){
+    public function owner_adver($user_id){
         $this->model->owner_adver();
      //   echo "owner_adver";
           $this->view->renderModule('advertisement','owner_advertisement_request');
-            $this->view->renderModule('advertisement','past_records');
+        $this->pastRecords($user_id);
             
     }
 
@@ -38,6 +38,11 @@ class Advertisement extends Controller {
     
     public function quality_adver_con(){
         $this->model->quality_adver_con();
+    }
+    
+    public function pastRecords($user_id){
+        $this->view->res = $this->model->pastRecords($user_id);
+        $this->view->renderModule('advertisement','past_records');
     }
 }
 

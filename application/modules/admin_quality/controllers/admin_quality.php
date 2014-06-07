@@ -31,7 +31,7 @@ class Admin_Quality extends Controller{
     }
     public function department($role){
         if($role == 'admin')
-        $this->view->renderModule('quality','adminQualityDept');
+        $this->view->renderModule('admin_quality','adminQualityDept');
         
             
         

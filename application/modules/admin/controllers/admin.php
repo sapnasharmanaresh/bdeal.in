@@ -49,7 +49,7 @@ class Admin extends Controller {
             $this->view->module = 'purchase';
             $this->view->file = 'department';
         } elseif ($name == 'quality') {
-            $this->view->module = 'quality';
+            $this->view->module = 'admin_quality';
             $this->view->file = 'department';
         } elseif ($name == 'accounts') {
             $this->view->module = 'account';
@@ -85,7 +85,7 @@ class Admin extends Controller {
     public function addEmployee($department) {
         $this->adminHeader('Add ' . ucfirst($department) . ' Employee');
         if ($department == 'quality') {
-            $this->view->module = 'quality';
+            $this->view->module = 'admin_quality';
             $this->view->file = 'add_emp';
             $this->view->data = array('admin');
         } elseif ($department == 'account') {
@@ -119,20 +119,13 @@ class Admin extends Controller {
 
         $this->adminHeader('Manage Navigation');
 
-        $this->manageWelcomeMenu();
-    }
-
-    public function manageWelcomeMenu() {
-        $this->view->module = 'topNav';
+       $this->view->module = 'topNav';
         $this->view->file = 'manageWelcomeNav';
 
         $this->view->renderModule('admin', 'template');
-        //  Modules::run('topNav', 'manageWelcomeNav');
     }
 
-    public function manageWelcomeSubmenu($menu) {
-        Modules::run('topNav', 'listSubmenu', array($menu));
-    }
+   
 
     public function listAll() {
         Modules::run('topNav', 'listAll');
@@ -193,11 +186,14 @@ $this->view->module = 'notification';
       //  Modules::run('notification', 'allNotifications');
     }
 
-    public function employee() {
+    public function employee($detail_id=null) {
         $this->adminHeader('Employee');
         $this->view->module = 'user';
         $this->view->file = 'employee';
-        // $this->view->data = array('admin');
+        if($detail_id!=null){
+            $this->view->data = array('$detail_id');
+        }
+        
         $this->view->renderModule('admin', 'template');
         // Modules::run('user', 'employee');
     }

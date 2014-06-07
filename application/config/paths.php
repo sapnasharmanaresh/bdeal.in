@@ -14,7 +14,7 @@ define('PRODUCT', UPLOADS . 'productImages/');
 define('SHOPLOGO', UPLOADS . 'shopLogo/');
 define('PROFILE_IMAGE', UPLOADS . 'userProfileImages/');
 define('PRODUCT_XLS', 'assets/uploads/productCsv/');
-define('ADVERTISEMENT', BASEURL . 'assets/uploads/advertisement/');
+define('ADVERTISEMENT',  'assets/uploads/advertisement/');
 define('SHOPBANNER', UPLOADS . 'shopBanner/');
 define('SUBCATEGORY_IMAGES', 'assets/uploads/subcategoryImages/');
 define('CATEGORY_IMAGES', 'assets/uploads/categoryImages/');

@@ -27,7 +27,12 @@ class Cart extends Controller {
     }
 
     public function addToCart() {
+          if(!isset($_SESSION['loggedIn'])){
+            echo '1';
+        }
+        else{
         $this->model->addToCart();
+    }
     }
 
     public function updateQuantity() {

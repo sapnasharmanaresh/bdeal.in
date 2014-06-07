@@ -265,14 +265,14 @@ class Mdl_user extends Model {
          */
     }
 
-    public function detail() {
-        $id = $_GET['id'];
+    public function detail($detail_id) {
+        
         $res = $this->db->select("SELECT user.*,detail.*,u.username as head,role.role from user 
                                                                 LEFT JOIN  `user-detail` as detail ON 
                                                                                   user.id=detail.user_id 
                                                                 LEFT JOIN user as u on u.id=user.head_id
                                                                 LEFT JOIN role on role.id=user.role_id
-                                                                                where user.id=$id
+                                                                                where user.id=$detail_id
                        
                                                                             
                                                                             

@@ -16,9 +16,17 @@
            ?> 
     </div>
        <?php
+       ?>
+     <div class="main-content span_4_of_6">
+    <?php
+ }
+ else{
+ ?>
+         <div class='mail-contentWithMargin'>    
+             <?php
  }
  ?>
-    <div class="main-content span_4_of_6">
+   
     <?php
     if(isset($this->data)){
      

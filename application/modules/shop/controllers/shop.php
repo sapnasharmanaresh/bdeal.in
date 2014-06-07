@@ -14,12 +14,22 @@ class Shop extends Controller{
         $this->view->shop_id = $shop_id;
         $this->view->renderModule('shop','navigation');
     }
-    public function visit($shop_name){
+    public function visit($shop_name,$product_id=null){
        $shop_id = $this->model->shopId($shop_name);
          $this->view->shop = $this->model->shop($shop_id);
-        $this->header($this->view->shop[0]['homepageTitle'],$shop_id);
-       $this->view->products = $this->model->productsInShop($shop_id);
-       $this->view->renderModule('shop','home');
+      
+      if($product_id==null){
+            $this->header($this->view->shop[0]['homepageTitle'],$shop_id);
+        $this->view->products = $this->model->productsInShop($shop_id);
+       $this->view->renderModule('shop','home');  
+      }
+      else{
+          
+          $this->header($product_id,$shop_id);
+            Modules::run('product','product_detail',array($product_id));
+           
+      }
+        
                $this->footer();
     }
   

@@ -42,8 +42,11 @@ class TopNav extends Controller{
          }
     }
     public function manageWelcomeNav(){
-       
-        $this->view->renderModule('topNav','admin-manage');
+          if(isset($_POST['saveShopMenus'])){
+            $this->model->saveMenus();
+        }
+        $this->view->res = $this->model->listmenus();
+        $this->view->renderModule('topNav','home');
     }     
          
     public function listAll(){
@@ -51,28 +54,18 @@ class TopNav extends Controller{
         $this->view->renderModule('topNav','display_all');
     }
     
-    public function addMenu(){
-        $this->view->count = $this->model->addMenu();
-        $this->view->renderModule('topNav','add_menu');
+      public function addSubmenu(){
+        $this->model->addSubmenu();
     }
     
-    public function addSubmenu(){
-        $this->view->renderModule('topNav','add_submenu');
-    }
+      public function deleteMenu(){
+          $this->model->deleteMenu();
+      }
     
-    public function navList(){
-        $this->listMenus();
-        $this->view->renderModule('topNav','nav_list');
-    }
-    
-    public function positionNav(){
-        $this->model->positionNav();
-    }
-
-    public function editSubmenu(){
-        $this->model->editSubmenu();
-        //echo "hey";
-    }
+      public function submenus(){
+      
+          $this->model->submenus();
+      }
 }
 ?>
 

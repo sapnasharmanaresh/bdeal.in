@@ -619,8 +619,7 @@ textarea {
   border: 1px solid #bfbfbf;
   outline: 0;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
-  background-color: #f7f7f7; }
+  border-radius: 2px; }
   /* line 54, tools/_mixins.scss */
   input[type="text"]::-webkit-input-placeholder,
   input[type="email"]::-webkit-input-placeholder,
@@ -1062,7 +1061,7 @@ root {
     clear: both; }
 
 /* line 71, layout/_main.scss */
-.main-content {
+.main-content, .main-contentWithMargin {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -1072,12 +1071,16 @@ root {
   padding-right: 0.83333%;
   font-size: 0.875em; }
 
+/* line 76, layout/_main.scss */
+.main-contentWithMargin {
+  margin-left: 200px; }
+
 /* Modules */
 /* ==|====================
    Module/Button
    ======================= */
 /* line 5, modules/_btn.scss */
-.btn, .btn-color1, .btn-color2, .btn-color3 {
+.btn, .btn-color1, .btn-color2, .btn-color3, .button-shop {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFF9F9F9', endColorstr='#FFE9E9E9');
   -moz-border-radius: 2px;
@@ -1093,11 +1096,11 @@ root {
   vertical-align: middle;
   cursor: pointer; }
   /* line 14, tools/_mixins.scss */
-  .lt-ie8 .btn, .lt-ie8 .btn-color1, .lt-ie8 .btn-color2, .lt-ie8 .btn-color3 {
+  .lt-ie8 .btn, .lt-ie8 .btn-color1, .lt-ie8 .btn-color2, .lt-ie8 .btn-color3, .lt-ie8 .button-shop {
     display: inline;
     zoom: 1; }
   /* line 23, modules/_btn.scss */
-  .btn:active, .btn-color1:active, .btn-color2:active, .btn-color3:active {
+  .btn:active, .btn-color1:active, .btn-color2:active, .btn-color3:active, .button-shop:active {
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2); }
 
 /* line 41, modules/_btn.scss */
@@ -1145,6 +1148,22 @@ root {
 /* line 53, modules/_btn.scss */
 .createAccount {
   margin-top: 30px; }
+
+/* line 57, modules/_btn.scss */
+.button-shop {
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF000000', endColorstr='#FF000000');
+  background-image: -moz-linear-gradient(#000000, #000000);
+  background-image: -webkit-linear-gradient(#000000, #000000);
+  background-image: linear-gradient(#000000, #000000);
+  color: #fff;
+  border-color: black;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  font-size: 25px; }
+  /* line 36, modules/_btn.scss */
+  .button-shop:hover {
+    background: black; }
 
 /* ==|====================
    Module/Icons
@@ -1305,6 +1324,22 @@ root {
 hr {
   background-color: #eee; }
 
+/* line 69, modules/_global.scss */
+.container {
+  font-size: 0.875em;
+  margin-left: 200px; }
+
+/* line 73, modules/_global.scss */
+.container80 {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 12, ../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/susy-2.1.2/sass/susy/output/support/_clearfix.scss */
+  .container80:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
 /*
     Document   : _notification
     Created on : May 10, 2014, 6:21:50 PM
@@ -1396,13 +1431,23 @@ root {
   border-radius: 2px 0 0 2px;
   border-right: none; }
 /* line 11, modules/_form-search.scss */
-.form-search .btn, .form-search .btn-color1, .form-search .btn-color2, .form-search .btn-color3 {
+.form-search .btn, .form-search .btn-color1, .form-search .btn-color2, .form-search .btn-color3, .form-search .button-shop {
   -moz-border-radius: 0 2px 2px 0;
   border-radius: 0 2px 2px 0;
   vertical-align: top;
   padding: .35em .6em; }
 
 /* .form-search */
+/* line 2, modules/_form.scss */
+root {
+  display: block; }
+
+/* line 6, modules/_form.scss */
+.reviewForm input[type='text'],
+.reviewForm input[type='email'] {
+  width: 500px;
+  margin-bottom: 10px; }
+
 /* ==|===============
     Module/Text formatted (rich content)
 ================== */
@@ -1482,3 +1527,35 @@ root {
 /* line 88, modules/_formatted.scss */
 .admin_section2 {
   height: 100%; }
+
+/* line 97, modules/_formatted.scss */
+.block-border, .side-block {
+  border: 3px solid #d4d4d4;
+  padding: 10px; }
+
+/* line 107, modules/_formatted.scss */
+.side-block input {
+  margin-top: 5px; }
+
+/* line 111, modules/_formatted.scss */
+.status {
+  font-size: 25px; }
+
+/* line 114, modules/_formatted.scss */
+.availability__group {
+  margin-top: -50px; }
+
+/* line 117, modules/_formatted.scss */
+.success {
+  color: #59042f; }
+
+/* line 121, modules/_formatted.scss */
+.fail {
+  color: #df2e30; }
+
+/* line 134, modules/_formatted.scss */
+.track {
+  background-color: #eee;
+  width: 500px;
+  -moz-border-radius: 10px;
+  border-radius: 10px; }

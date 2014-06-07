@@ -16,8 +16,12 @@ class Reviews extends Controller{
     }
     
     public function addReview(){
-        echo "dfasd";
+          if(!isset($_SESSION['loggedIn'])){
+            echo '1';
+        }
+        else{
         $this->model->addReview();
+    }
     }
     
     public function showReviews(){

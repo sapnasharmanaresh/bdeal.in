@@ -128,14 +128,17 @@ class Owner extends Controller {
 
     public function advertisement() {
         $this->header('Advertisement Request');
-        Modules::run('advertisement', 'owner_adver');
+         $this->view->module = 'advertisement';
+        $this->view->file = 'owner_adver';
+        $this->view->data = Session::get('user_id');
+        $this->view->renderModule('owner', 'template');
     }
 
     public function product_list() {
         $this->header('Product List');
         $this->view->module = 'product';
         $this->view->file = 'owner_product_list';
-        $this->view->renderModule('product', 'template');
+        $this->view->renderModule('owner', 'template');
     }
 
     public function customer() {
@@ -147,7 +150,7 @@ class Owner extends Controller {
         $this->header('Orders');
           $this->view->module = 'orders';
         $this->view->file = 'owner_order_list';
-        $this->view->renderModule('product', 'template');
+        $this->view->renderModule('owner', 'template');
         
     }
 
@@ -159,7 +162,7 @@ class Owner extends Controller {
         $this->header('Coupon');
         $this->view->module = 'coupon';
         $this->view->file = 'getCoupon';
-        $this->view->renderModule('product', 'template');
+        $this->view->renderModule('owner', 'template');
         //  Modules::run('coupon', 'getCoupon');
     }
 
@@ -172,14 +175,15 @@ class Owner extends Controller {
         $this->header('Shop Navigation');
         $this->view->module = 'shopNav';
         $this->view->file = 'home';
-        $this->view->renderModule('product', 'template');
+        $this->view->data = Session::get('shop_id');
+        $this->view->renderModule('owner', 'template');
     }
 
     public function newProduct() {
         $this->header('Add Product');
         $this->view->module = 'product';
         $this->view->file = 'newProduct';
-        $this->view->renderModule('product', 'template');
+        $this->view->renderModule('owner', 'template');
     }
 
     public function selectSubcat() {
@@ -190,14 +194,14 @@ class Owner extends Controller {
         $this->header('Complaints');
         $this->view->module = 'feedback';
         $this->view->file = 'complaints';
-        $this->view->renderModule('product', 'template');
+        $this->view->renderModule('owner', 'template');
     }
 
     public function feedback() {
         $this->header('Complaints');
         $this->view->module = 'feedback';
         $this->view->file = 'feedback';
-        $this->view->renderModule('product', 'template');
+        $this->view->renderModule('owner', 'template');
     }
 
     public function settings($type) {
@@ -205,7 +209,7 @@ class Owner extends Controller {
         $this->view->module = 'settings';
         $this->view->file = 'owner';
         $this->view->data = array($type);
-        $this->view->renderModule('product', 'template');
+        $this->view->renderModule('owner', 'template');
     }
 
     public function visitShop() {
@@ -231,14 +235,14 @@ class Owner extends Controller {
         $this->view->module = 'stock';
         $this->view->file = 'shopStock';
 
-        $this->view->renderModule('product', 'template');
+        $this->view->renderModule('owner', 'template');
     }
 
     public function empSalary() {
         $this->header('Employee Salary');
         $this->view->module = 'salary';
         $this->view->file = 'getSalaryAmount';
-        $this->view->renderModule('product', 'template');
+        $this->view->renderModule('owner', 'template');
     
         
     }

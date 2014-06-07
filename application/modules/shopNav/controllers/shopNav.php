@@ -19,11 +19,11 @@ class ShopNav extends Controller {
 
     }
     
-    public function home(){
+    public function home($shop_id){
         if(isset($_POST['saveShopMenus'])){
             $this->model->saveMenus();
         }
-        $this->view->res = $this->model->listmenus();
+        $this->view->res = $this->model->listmenus($shop_id);
         $this->view->renderModule('shopNav','home');
     }
     
