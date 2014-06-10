@@ -19,12 +19,19 @@ class Search extends Controller {
     public function search() {
         $name = $_GET['q'];
         Modules::run('template', 'templateHeader', array("$name | Search"));
-        $this->view->results = $this->model->searchMain();
-       // print_r($this->view->results);
-// $this->view->renderModule('search','searchCategory');
-        $this->view->renderModule('search', 'searchPage');
+     
+        $this->view->module = 'search';
+        $this->view->file = 'searchPage';
+       
+        $this->view->renderModule('search', 'template');
+        Modules::run('template', 'templateFooter');
     }
 
+    public function searchPage(){
+       
+          $this->view->results = $this->model->searchMain();
+        $this->view->renderModule('search', 'searchPage');
+    }
     public function BypriceHighToLow() {
        
     }

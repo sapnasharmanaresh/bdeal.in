@@ -22,7 +22,7 @@
  }
  else{
  ?>
-         <div class='mail-contentWithMargin'>    
+         <div class='main-contentWithMargin'>    
              <?php
  }
  ?>

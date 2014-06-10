@@ -6,8 +6,10 @@ class Mdl_priceAlert extends Model {
         parent::__construct();
     }
     
-    public function setPriceAlert(){
+    public function setPriceAlert($product_id){
         if(isset($_POST['setalert'])){
+            $lvalue = $_POST['lvalue'];
+            $uvalue=$_POST['uvalue'];
         $this->db->insert('pricealert',array(
            'user_id'=>Session::get('user_id'),
             'product_id'=>$product_id,

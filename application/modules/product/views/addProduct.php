@@ -66,7 +66,7 @@ if (isset($this->msg)) {
     </table>
 </form>
 
-<form name="addCategory" id="addCategory" action="<?php echo BASEURL ?>owner/newProduct" method="post">
+<form name="addCategory" id="addCategory" action="<?php echo BASEURL ?>owner/newProduct" method="post" enctype="multipart/form-data">
     <table class="table">
         <tr>
             <th colspan="2">Add Category</th>

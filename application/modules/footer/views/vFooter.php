@@ -7,7 +7,7 @@
         <section class="foot foot-1">
             <div class="foot-1__align">
                 
-                <span class="foot-1__text1">Get started with bdeal today. </span><span class="font-1__text2"><a class="btn font-1__btn" href="">Create an Account</a></span>
+                <span class="foot-1__text1">Get started with bdeal today. </span><span class="font-1__text2"><a class="btn font-1__btn" href="<?php echo BASEURL?>user/login#register">Create an Account</a></span>
             </div>
         </section>
         <?php
@@ -19,25 +19,25 @@
                     <div class="col span_1_of_4">
                         <h5>Overview</h5>
                         <ul>
-                            <li><a href="<?php echo BASEURL ?>desc/aboutus">About Us</a></li>
-                             <li><a href="">Careers</a></li>
-                             <li><a href="">Sell with us</a></li>
-                             <li><a href="">Responsible Disclosure Policy </a>
+                            <li><a href="<?php echo BASEURL ?>desc/overview/aboutus">About Us</a></li>
+                             <li><a href="<?php echo BASEURL ?>desc/overview/careers">Careers</a></li>
+                             <li><a href="<?php echo BASEURL ?>desc/overview/sellWithUs">Sell with us</a></li>
+                             <li><a href="<?php echo BASEURL ?>desc/overview/disclosure">Responsible Disclosure Policy </a>
                         </ul>
                     </div>
                      <div class="col span_1_of_4">
                          <h5>Resources</h5>
                          <ul>
-                             <li><a href="">Getting Started</a></li>
+                             <li><a href="<?php echo BASEURL ?>desc/resources/gettingStarted">Getting Started</a></li>
                              <li><a href="<?php echo BASEURL ?>user_guide/home">User guide</a></li>
                          </ul>
                     </div>
                  <div class="col span_1_of_4">
                      <h5>Help</h5>
                      <ul>
-                         <li><a href="">Frequently asked Questions</a></li>
-                         <li><a href="">Track Orders</a></li>
-                         <li><a href=''>Be an owner</a></li>
+                         <li><a href="<?php echo BASEURL ?>desc/help/faq">Frequently asked Questions</a></li>
+                         <li><a href="<?php echo BASEURL ?>desc/help/trackOrders">Track Orders</a></li>
+                         <li><a href='<?php echo BASEURL ?>desc/help/beOwner'>Be an owner</a></li>
                          <li><a href=''>Shipping</a></li>
                          <li><a href="">Cancellation</a></li>
                          <li><a href="">Returns</a></li>

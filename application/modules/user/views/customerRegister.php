@@ -3,8 +3,8 @@
    <?php
 if(!isset($_SESSION['loggedIn'])){
 ?> 
-    <div class="btn btn-color3 createAccount right">
-      Create Account>
+    <div class="createAccount right">
+      <a class="btn btn-color3" href="<?php echo BASEURL?>user/login#register">Create Account></a>
     </div>
 </div>
 

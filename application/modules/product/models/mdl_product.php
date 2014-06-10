@@ -7,11 +7,14 @@ class Mdl_product extends Model {
         parent::__construct();
     }
 
-    public function display_product() {
+    public function display_product($category=null) {
         $prod = $this->db->select('SELECT product.*,detail.*,user.id as owner_id
             FROM product,shop,user ,`product-detail` as detail where product.product_id = detail.product_id and
             product.shop_id=shop.shop_id and shop.owner_id= user.id ORDER BY rand() LIMIT 5
 ');
+//        SELECT product.*,detail.*,user.id as owner_id
+//            FROM product,shop,user ,`product-detail` as detail where product.product_id = detail.product_id and
+//            product.shop_id=shop.shop_id and shop.owner_id= user.id product.category_id=(SELECT  category_id from category where category_id=(SELECT submenu_cat_id from submenus where menu_id=(SELECT id FROM topnav where name='$category') )) ORDER BY rand() LIMIT 5
         return $prod;
     }
 

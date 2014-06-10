@@ -215,7 +215,7 @@ class Owner extends Controller {
     public function visitShop() {
         $shop_name = Session::get('shop_name');
 
-        Modules::run('shop', 'shop', array($shop_name));
+        Modules::run('shop', 'visit', array($shop_name));
     }
 
     public function deleteMenu() {

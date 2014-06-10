@@ -6,7 +6,7 @@ foreach($this->prod as $key => $value){
 <div class="product-div span_1_of_6">
     
     <a href="product/display_detail/<?php echo $value['product_id']; ?>">
-        <img src='<?php echo PRODUCT.$value['image'];
+        <img src='<?php echo BASEURL.PRODUCT.$value['image'];
 	?>' height='100px' width='100px' >
   <div class="product__name"><?php echo $value['name']; ?></div>  </a>
   <hr/>

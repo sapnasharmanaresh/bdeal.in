@@ -24,21 +24,21 @@ class Product extends Controller {
         return $prod;
     }
 
-    public function display_thumbnail() {
+    public function display_thumbnail($category=null) {
         //    echo "display";
-        $this->view->prod = $this->display_product();
+        $this->view->prod = $this->display_product($category=null);
         $this->view->renderModule('product', 'product-thumbnail');
     }
 
     public function display_detail($product_id) {
-
+      //echo $product_id;
         $this->view->detail = $this->model->display_detail($product_id);
 //          print_r($this->view->detail);
         $title = $this->view->detail[0]['name'];
         $this->header($title);
         $this->view->module = 'product';
         $this->view->file = 'product_detail';
-        $this->view->data = $product_id;
+       $this->view->data = array($product_id);
 
         $this->view->renderModule('product', 'template');
         $this->footer();
@@ -86,7 +86,9 @@ class Product extends Controller {
     }
 
     public function product_detail($product_id) {
+  
         $this->view->detail = $this->model->display_detail($product_id);
+        
         $this->view->renderModule('product', 'product-detail');
     }
 

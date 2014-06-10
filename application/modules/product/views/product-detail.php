@@ -1,7 +1,11 @@
+
 <div class="container">
     <?php
+
     foreach ($this->detail as $key => $value) {
+        
         ?>
+    
         <div class="link">
             <a href="<?php echo BASEURL; ?>">
                 <?php echo "Home"; ?>
@@ -13,7 +17,7 @@
                 <?php echo $value['subcategory']; ?>
             </a>
         </div>
-        <div>
+        <div class="wrapper">
             <div class='product-image span_2_of_6'>
                 <img src='<?php echo BASEURL . PRODUCT . $value['image'] ?>' height='200px' width='200px' >
 

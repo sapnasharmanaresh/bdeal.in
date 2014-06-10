@@ -1,19 +1,43 @@
 <?php // echo Hash::create('sha256', '9872639621', HASH_PASSWORD_KEY); ?>
-<div class="content">
-    <h1>Request Form</h1>
+<div class="content wrapper">
+    <div id='register' class="user-register">
+        <span class='register__text'>Request Form</span>
+    
     <form name="request" action="<?php echo BASEURL; ?>ownerRequest/form" method="post" enctype="multipart/form-data">
-        <input type="text" name="name" placeholder="Your name"><br/>
-        <input type="email" name="email" id="email" placeholder="email"><p id="result"></p><br/>
-        <input type="text" name="shopname" placeholder="shop name"><br/>
-        <textarea rows="5" cols="15" name="shopdescription"></textarea><br/>
-        <input type="text" name="contact" placeholder="contact no"><br/>
-        <input type="text" name="deal" placeholder="deal %"><br/>
-        Product list with full info(.xls or .csv)<input type="file" name="product_list"><br/>
-        Upload product images folder (.zip)<input type="file" name="product_image"><br/>
-        <input type="submit" name="request" value="Send Request"><br/>
+    <table>
+        <tr>
+            <td> <input type="text" name="name" placeholder="Your name"></td>
+        </tr>
+        <tr>
+            <td>   <input type="email" name="email" id="email" placeholder="email"><p id="result"></p></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="shopname" placeholder="shop name"></td>
+        </tr>
+        <tr>
+            <td> <textarea rows="5" cols="40" name="shopdescription"></textarea></td>
+       </tr>
+       <tr>
+           <td>
+                 <input type="text" name="contact" placeholder="contact no">
+           </td>
+       </tr>
+       <tr>
+           <td> <input type="text" name="deal" placeholder="deal %"></td>
+       </tr>
+       <tr>
+           <td>Product list with full info(.xls or .csv)<input type="file" name="product_list"></td>
+       </tr>
+       <tr>
+           <td>Upload product images folder (.zip)<input type="file" name="product_image"></td>
+       </tr>
+       <tr>
+           <td>    <input type="submit" name="request" value="Send Request"></td>
+       </tr>
+    </table>
     </form>
-    <br/><br/><br>
-    <p>If posted request then you can track ur request id</p><a href='<?php echo BASEURL; ?>ownerRequest/track'>Track</a>
+  
+    <p>If posted request then you can track ur request id</p><a class="btn-color3"href='<?php echo BASEURL; ?>ownerRequest/track'>Track</a>
     <?php
     ?>
 </div>
@@ -24,4 +48,5 @@
 </div>
 <div class="lightbox-content">
     
+</div>
 </div>

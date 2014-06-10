@@ -6,11 +6,11 @@
         ?>
 <div class="searched_product span_4_of_6">
         <div class="searched_product__image span_2_of_6">
-            <img src="<?php echo PRODUCT . $result['image'] ?>" height= '200px' width='200px' >
+            <img src="<?php echo BASEURL.PRODUCT . $result['image'] ?>" height= '200px' width='200px' >
         </div>
         <div class='searched_product__detail span_4_of_6 '>
             <div class="searched_product__head">
-                <a href='<?php echo BASEURL."product-detail?id=".$result['product_id']?>'> <?php echo $result['name'] ?></a>
+                <a href='<?php echo BASEURL."product/display_detail/".$result['product_id']?>'> <?php echo $result['name'] ?></a>
             </div> 
             <div class='searchedProduct__info'>
                 <table>

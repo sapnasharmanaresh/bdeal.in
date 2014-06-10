@@ -55,7 +55,9 @@
                 <li>
                     Settings
                     <ul>
-                        <li><a href="<?php echo BASEURL ?>admin/settings/theme">Theme</a></li></ul>
+                        <li><a href="<?php echo BASEURL ?>admin/settings/theme">Theme</a></li>
+                        <li><a href="<?php echo BASEURL ?>admin/settings/footer">Footer</a></li>
+                    </ul>
                 </li>
                 
 

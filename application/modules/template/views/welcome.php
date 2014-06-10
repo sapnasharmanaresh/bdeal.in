@@ -21,20 +21,16 @@
     <div class="block">
         <div class="block__head">Electronics        </div>
         <div class="block__body">
-            <?php Modules::run('product', 'display_thumbnail'); ?>
+            <?php Modules::run('product', 'display_thumbnail',array('Electronics')); ?>
         </div>
     </div>
-        
-
-    
-
-</section>
+  </section>
 <hr/>
 <section class="section5">
     <div class="block">
         <div class="block__head">Books        </div>
         <div class="block__body">
-            <?php Modules::run('product', 'display_thumbnail'); ?>
+            <?php Modules::run('product', 'display_thumbnail',array('Books')); ?>
         </div>
     </div>
    
@@ -44,10 +40,17 @@
    <div class="block">
         <div class="block__head">Fashion        </div>
         <div class="block__body">
-            <?php Modules::run('product', 'display_thumbnail'); ?>
+            <?php Modules::run('product', 'display_thumbnail',array('Fashion')); ?>
         </div>
     </div>
 </section>
 <hr/>
 
-
+<section class="section6">
+   <div class="block">
+        <div class="block__head">Others</div>
+        <div class="block__body">
+            <?php Modules::run('product', 'display_thumbnail',array('Others')); ?>
+        </div>
+    </div>
+</section>

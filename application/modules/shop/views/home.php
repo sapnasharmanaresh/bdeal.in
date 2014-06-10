@@ -15,9 +15,9 @@
  */
 ?>
 <section class="section3">
-    <img class="img" src="<?php echo ADVERTISEMENT ?>1.jpg" height="20%" width=30%">
-   <img class="img" src="<?php echo ADVERTISEMENT ?>2.jpg" height="20%" width=30%">
-   <img class="img" src="<?php echo ADVERTISEMENT ?>3.jpg" height="20%" width=30%">
+    <img class="img" src="<?php echo BASEURL.ADVERTISEMENT ?>1.jpg" height="20%" width=30%">
+   <img class="img" src="<?php echo BASEURL.ADVERTISEMENT ?>2.jpg" height="20%" width=30%">
+   <img class="img" src="<?php echo BASEURL.ADVERTISEMENT ?>3.jpg" height="20%" width=30%">
 
 </section>
 
@@ -30,19 +30,9 @@
 ?>
 
 <section class="section4">
-
-    <div class="product">
-        <div class="product__head">Electronics</div>
-        <div class="product__body">
             <?php Modules::run('product', 'display_thumbnail'); ?>
-        </div>
-    </div>
-        
-
-    
-
 </section>
-Other products are 
+<!--Other products are 
 <section class="row ">
     <div class='span_2_of_6'>
     </div>
@@ -70,7 +60,7 @@ else{
 </div>
     <div class='clearfix'></div>
 </section>
-
+-->
 
     
 

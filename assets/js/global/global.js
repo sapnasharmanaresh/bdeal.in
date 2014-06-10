@@ -25,9 +25,14 @@ function addToList(prod_id) {
     $.post(baseurl + 'wishList/addToList', {
         'product_id': prod_id
     }, function(data) {
+    
         if (data == 1) {
             alert('Kindly login to add product in wishlist');
-        } else {
+        } 
+        
+    else if(data == 2){
+        alert('This is for customer only , You cant access this');
+    }else {
             location.reload();
         }
     })
@@ -112,6 +117,10 @@ function search(value) {
     }, function(data) {
         alert(data);
     })
+}
+
+function submitSearch(){
+    $('#search').submit();
 }
 
 ///*

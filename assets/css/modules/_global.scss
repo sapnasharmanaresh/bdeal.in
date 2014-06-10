@@ -68,7 +68,7 @@ hr{
 }
 .container{
     font-size: 0.875em;
-    margin-left:200px;
+    //margin-left:200px;
 }
 .container80{
     @include container(80%);
