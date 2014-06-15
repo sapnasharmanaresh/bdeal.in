@@ -43,7 +43,7 @@ class Template extends Controller {
         $this->view->renderModule('template', 'admin-act');
     }
 
-    function admin_sale() {
+    function admin_sales() {
         $this->view->renderModule('template', 'admin-sale');
     }
 
@@ -59,7 +59,7 @@ class Template extends Controller {
         $this->view->renderModule('template', 'owner-purchase');
     }
 
-    function owner_sale() {
+    function owner_sales() {
         $this->view->renderModule('template', 'owner-sale');
     }
 

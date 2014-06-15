@@ -1,5 +1,7 @@
 <section class="guide_section3">
-    <div class="main-content">
+
+    <div class="row">
+    <div class="main-content span_4_of_6">
         <?php
         if (isset($this->module)) {
  if (isset($this->data)) {
@@ -10,11 +12,12 @@
         }
         }
         ?>
-        <?php 
+    </div>    
+    <?php 
         if(isset($this->moduleNav)){
             ?>
     
-        <div class='section_nav3'>
+        <div class='section_nav3 span_1_of_6_omega'>
             <?php
             if (isset($this->dataNav)) {
 
@@ -28,5 +31,5 @@
             <?php
         }
         ?>
-
+    </div>
 </section>

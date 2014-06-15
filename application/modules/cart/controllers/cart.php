@@ -31,8 +31,12 @@ class Cart extends Controller {
             echo '1';
         }
         else{
+            if(Session::get('role')!='customer'){
+                echo "2";
+            }else{
         $this->model->addToCart();
     }
+        }
     }
 
     public function updateQuantity() {

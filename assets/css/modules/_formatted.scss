@@ -136,3 +136,15 @@
     width: 500px;
    @include border-radius(10px);
 }
+
+.prof{
+  
+    margin-top: 0px!important;
+        margin-left: 20%;
+        table{
+                    td:nth-child(2){
+                        font-weight: bold;
+                        text-transform: uppercase;
+                    }
+        }
+}

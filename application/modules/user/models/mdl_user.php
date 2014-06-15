@@ -37,7 +37,7 @@ class Mdl_user extends Model {
                 if ($count > 0) {
                     $user_id = $sth[0]['id'];
                     //   echo $username;
-                     Session::init();
+                    @ Session::init();
                     Session::set('loggedIn', 'true');
                     Session::set('username', "$username");
                     Session::set('role', "$role");
@@ -66,6 +66,8 @@ class Mdl_user extends Model {
                         header('Location:' . BASEURL . 'template/admin_quality');
                     }
                 }
+                $msg = '';
+                
             } else {
                 $msg = "invalid username or password";
             }
@@ -185,7 +187,7 @@ class Mdl_user extends Model {
                 'description' => $shopDescription,
                     'logo' => 'default-logo.png'
             ));
-            $this->db->delete('ownerrequest', "id=$request_id");
+            $this->db->delete('ownerrequest', "id='$request_id'");
         }
     }
 
@@ -277,7 +279,6 @@ class Mdl_user extends Model {
                                                                             
                                                                             
                 ");
-//print_r($res);
 // select user.username as head from user where id =(select head_id from user where id ='6') 
         return $res;
     }
@@ -326,15 +327,17 @@ class Mdl_user extends Model {
     }
 
     public function owner_customer() {
-        $user_id = Session::get('user_id');
-        $this->db->select("SELECT user.*,user-detail.*,orders.*,order-detail.* from user
-                                                            left join user-detail on
-                                                                user.id = user-detail.user-id
+        $shop_id = Session::get('shop_id');
+        $res = $this->db->select("SELECT user.*,`user-detail`.*,orders.*,`order-detail`.* from user
+                                                            left join `user-detail` on
+                                                                user.id = `user-detail`.`user_id`
                                                              left join orders on
-                                                                  orders.user_id = user.id
-                                                              left join order-detail on
-                                                                     orders.order_id=order-detail.order_id   
-                                                                    where user.id = $user_id");
+                                                                  orders.`user_id` = user.id
+                                                              left join `order-detail` on
+                                                                     orders.`order_id`=`order-detail`.`order_id`   
+                                                                    where orders.shop_id = '$shop_id'");
+        return $res;
+        
     }
 
     public function account_status() {

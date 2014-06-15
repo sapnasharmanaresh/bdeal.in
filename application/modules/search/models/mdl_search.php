@@ -35,6 +35,42 @@ class Mdl_search extends Model{
         return $res;
     }
     
+    public function customer(){
+        echo $value = $_POST['value'];
+         $res = $this->db->select("SELECT user.*,detail.*,u.username as head,role.role,orders.* from user 
+                                                                LEFT JOIN  `user-detail` as detail ON 
+                                                                                  user.id=detail.user_id 
+                                                                LEFT JOIN user as u on u.id=user.head_id
+                                                                LEFT JOIN role on role.id=user.role_id
+                                                                LEFT JOIN orders on orders.user_id=user.id
+                                                                                where user.role_id='2' 
+                                                                                and (user.username like '%$value%' || detail.firstname like '%$value%' || detail.lastname like '%$value%' ||
+                                                                                    detail.email like '%$value%' || detail.address like '%$value%' || detail.country like '%$value%' ||detail.gender like '%$value%' ||
+                                                                                        detail.contact like '%$value%' || detail.city like '%$value%' || detail.state like '%$value%' || role.role like '%$value%' )
+                ");
+
+// select user.username as head from user where id =(select head_id from user where id ='6') 
+        return $res;
+    }
+    
+    public function owner(){
+        echo $value = $_POST['value'];
+         $res = $this->db->select("SELECT user.*,detail.*,u.username as head,role.role,shop.* from user 
+                                                                LEFT JOIN  `user-detail` as detail ON 
+                                                                                  user.id=detail.user_id 
+                                                                LEFT JOIN user as u on u.id=user.head_id
+                                                                LEFT JOIN role on role.id=user.role_id
+                                                                LEFT JOIN shop on shop.owner_id=user.id
+                                                                                where user.role_id='3'
+                                                                                and (user.username like '%$value%' || detail.firstname like '%$value%' || detail.lastname like '%$value%' ||
+                                                                                    detail.email like '%$value%' || detail.address like '%$value%' || detail.country like '%$value%' ||detail.gender like '%$value%' ||
+                                                                                        detail.contact like '%$value%' || detail.city like '%$value%' || detail.state like '%$value%' || role.role like '%$value%' )
+                ");
+
+// select user.username as head from user where id =(select head_id from user where id ='6') 
+        return $res;
+    }
+    
     public function searchMain(){
         $search = $_GET['q'];
         $res = $this->db->select("SELECT subcategory.subcategory,category.category_name,`product-detail`.*
@@ -51,9 +87,9 @@ class Mdl_search extends Model{
     }
     
     public function searchSidebar($cat_name,$subcat_name){
-        
-        $product = $this->db->select("SELECT * from subcategory LEFT JOIN category on category.category_id=subcategory.category_id where subcategory.subcategory='$subcat_name'and category.category_name='$cat_name'");
-        //print_r($res);
+        //echo $subcat_name;
+        $product = $this->db->select("SELECT * from subcategory LEFT JOIN category on category.category_id=subcategory.category_id where subcategory.subcategory='$subcat_name' and category.category_name='$cat_name'");
+      //  print_r($product);
         return $product;
        
     }

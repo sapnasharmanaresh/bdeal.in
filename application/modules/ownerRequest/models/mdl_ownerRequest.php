@@ -31,7 +31,7 @@ class Mdl_ownerRequest extends Model {
                $num=count($exist);
                
                if($num>0){
-                    echo "This email exists already in database.Try another one!";
+                    echo "<div class=error>This email exists already in database.Try another one!</div>";
                     
                 }
                 else{
@@ -69,7 +69,8 @@ class Mdl_ownerRequest extends Model {
                                 'timestamp'=>date('Y-m-d')
                 )); 
                 Modules::run('mail', 'owner_request_confirmation', array($id));
-                echo "Your request has been successfully sent";
+                echo "<div class=success>Your request has been successfully sent</div>";
+                
             }
             }
             else {
@@ -84,7 +85,7 @@ class Mdl_ownerRequest extends Model {
 
         if (isset($_POST['find'])) {
             $email = $_POST['request_email'];
-            $out = $this->db->select("SELECT * FROM ownerrequest where email = :email and status!='Approved' and replyfromqualitydpt!='Approved'", array(':email' => $email));
+            $out = $this->db->select("SELECT * FROM ownerrequest where email = :email", array(':email' => $email));
             //print_r($out);
             return $out;
         }
@@ -159,9 +160,9 @@ class Mdl_ownerRequest extends Model {
         $c = count($res);
         //echo $c;
         if ($c > 0) {
-            echo 0;
+            echo true;
         } else {
-            echo 1;
+            echo false;
         }
     }
 

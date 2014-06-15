@@ -1,15 +1,14 @@
 
 <?php
 
-if (isset($this->detail_id)) {
-    $detail_id = $this->detail_id;
+if (isset($this->detail)) {
     foreach($this->detail as $k => $v)
     ?>
-    <div id="emp-detail">
-        <div id="image">
-            <img src="<?php echo PROFILE_IMAGE . $v['image'] ?>">
-        </div>
-        <div id="info">
+     <div id="detail-box">
+        <div class="image span_2_of_6">
+            <img src="<?php echo BASEURL.PROFILE_IMAGE . $v['image'] ?>">
+           </div>
+        <div class="info span_4_of_6">
             <p>Firstname:<?php echo $v['firstname'] ?></p>
             <p>Lastname:<?php echo $v['lastname'] ?></p>
             <p>Gender<?php echo  $v['gender'] ?></p>
@@ -46,12 +45,12 @@ if (isset($this->detail_id)) {
                     <td></td>
                 </tr>
             </table></p>
-            <a href="#mail">Send Mail</a>
+            <a class='btn' href="#mail">Send Mail</a>
             <select>
                 <option>Warning</option>
                 <option>Compose </option>
             </select>
-            Account status<select>
+            Account status<select onchange='account_status(<?php $v['user_id']?>)'>
                 <option <?php if($v['status']=='Enable') echo"selected";?>>Enable</option>
                 <option <?php if($v['status']=='Disable') echo"selected";?>>Disable</option>
                 <option>Delete</option>
@@ -68,7 +67,8 @@ if (isset($this->detail_id)) {
     */
    ?>
     
-    Search<input type="text" name="search-table"> 
+    Search<input type="text" name="search-table" onkeyup='search_customer(this.value)' > 
+       <div id='result' ></div>
   List of all the Customers
 <table class='table'>
     <tr>
@@ -85,7 +85,7 @@ if (isset($this->detail_id)) {
             <td><?php echo $i; ?></td>
             <td><?php echo $value['username']; ?></td>
             <td><?php echo $value['ordered-items'] ?></td>
-            <td><a href="/<?php echo $value['id']; ?>">More Details</a></td>
+            <td><a href="<?php echo BASEURL.'admin/customer' ?>/<?php echo $value['id']; ?>">More Details</a></td>
 
         </tr>
    

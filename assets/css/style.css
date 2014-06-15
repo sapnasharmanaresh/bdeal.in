@@ -554,6 +554,7 @@ th {
 /* line 5, base/_base.scss */
 html, body {
   height: 100%;
+  width: 100%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 1em;
@@ -793,7 +794,7 @@ root {
   list-style: none; }
 /* line 17, layout/_nav.scss */
 .nav1 > li {
-  margin-left: 10%;
+  margin-left: 7%;
   font-weight: bold;
   border-bottom: 5px solid white; }
   /* line 21, layout/_nav.scss */
@@ -820,7 +821,7 @@ root {
 
 /* line 50, layout/_nav.scss */
 .nav2, .nav3 {
-  height: 100%;
+  height: 800px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -830,16 +831,16 @@ root {
   padding-right: 0.83333%;
   background: url("img/bg2.png");
   color: #666666; }
-  /* line 56, layout/_nav.scss */
+  /* line 57, layout/_nav.scss */
   .nav2 ul li, .nav3 ul li {
     position: relative;
     list-style: none;
     text-indent: -30px; }
-  /* line 63, layout/_nav.scss */
+  /* line 64, layout/_nav.scss */
   .nav2 li > ul, .nav3 li > ul {
     margin-left: -20px; }
 
-/* line 71, layout/_nav.scss */
+/* line 72, layout/_nav.scss */
 .topbar {
   height: 30px;
   background: url("img/bg1.png");
@@ -853,14 +854,14 @@ root {
   padding-right: 0.83333%;
   font-weight: 500;
   padding: 0; }
-  /* line 78, layout/_nav.scss */
+  /* line 79, layout/_nav.scss */
   .topbar a {
     padding: 0 20px 0 20px; }
-  /* line 81, layout/_nav.scss */
+  /* line 82, layout/_nav.scss */
   .topbar .separator {
     color: #e6e6e6; }
 
-/* line 85, layout/_nav.scss */
+/* line 86, layout/_nav.scss */
 .nav3 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1339,6 +1340,18 @@ hr {
     display: block;
     clear: both; }
 
+/* line 76, modules/_global.scss */
+.error {
+  font-size: 0.8em;
+  color: red;
+  font-weight: bold; }
+
+/* line 81, modules/_global.scss */
+.success {
+  font-size: 0.8em;
+  color: #8bc557;
+  font-weight: bold; }
+
 /*
     Document   : _notification
     Created on : May 10, 2014, 6:21:50 PM
@@ -1558,3 +1571,68 @@ root {
   width: 500px;
   -moz-border-radius: 10px;
   border-radius: 10px; }
+
+/* line 140, modules/_formatted.scss */
+.prof {
+  margin-top: 0px !important;
+  margin-left: 20%; }
+  /* line 145, modules/_formatted.scss */
+  .prof table td:nth-child(2) {
+    font-weight: bold;
+    text-transform: uppercase; }
+
+/*
+    Document   : _lightbox
+    Created on : Jun 12, 2014, 9:02:04 AM
+    Author     : dell
+    Description:
+    Purpose of the stylesheet follows.
+*/
+/*
+    TODO customize this sample style
+    Syntax recommendation http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html
+*/
+/* line 14, modules/_lightbox.scss */
+root {
+  display: block; }
+
+/* line 18, modules/_lightbox.scss */
+.lightbox {
+  background-color: black;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1000; }
+
+/* line 26, modules/_lightbox.scss */
+.lightbox-content {
+  display: none;
+  background-color: white;
+  margin-left: auto;
+  margin-top: auto;
+  width: 100%; }
+
+/*
+    Document   : _graph
+    Created on : Jun 12, 2014, 10:02:03 AM
+    Author     : dell
+    Description:
+    Purpose of the stylesheet follows.
+*/
+/*
+    TODO customize this sample style
+    Syntax recommendation http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html
+*/
+/* line 14, modules/_graph.scss */
+root {
+  display: block; }
+
+/* line 17, modules/_graph.scss */
+.graph-md {
+  height: 200px;
+  width: 300px; }
+
+/* line 21, modules/_graph.scss */
+.graph-lg {
+  height: 300px;
+  width: 800px; }

@@ -1,12 +1,11 @@
 <?php
 /**
- * Accounts department will manage only financial status of whole mall
- * and can interact with anybody
+ Sales department of shop handles the selling of products
  * 
  */
 
 ?>
-<section class='admin_section2'>
+<section class='section2'>
 <aside class='nav2'>
     <ul class="nav">
         <li><a id="request" href="">Home</a></li>
@@ -14,15 +13,9 @@
 
         <li><a href="">Detail</a>
             <ul>
-
-                <li><a href='<?php echo BASEURL; ?>admin_act/shopsDetail'>Shops</a></li><?php
-                /*
-                 * how many shops
-                 * performace
-                 * decide rewards for shops and tl admin to clear dat
-                 */
-                ?>
-                <?php
+                <li><a href='<?php echo BASEURL ?>owner_sales/orders'>Shop Orders</a></li>
+                <li><a href='<?php echo BASEURL ?>owner_sales/productList'>Product List</a></li>
+   <?php
                 /*
                  * 
                  * complete info abt shop , everything (product listing,items of each category)

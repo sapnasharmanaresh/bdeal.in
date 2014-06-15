@@ -7,11 +7,12 @@ class Mdl_product extends Model {
         parent::__construct();
     }
 
-    public function display_product($category=null) {
-        $prod = $this->db->select('SELECT product.*,detail.*,user.id as owner_id
-            FROM product,shop,user ,`product-detail` as detail where product.product_id = detail.product_id and
-            product.shop_id=shop.shop_id and shop.owner_id= user.id ORDER BY rand() LIMIT 5
-');
+    public function display_product($category) {
+      
+        $prod = $this->db->select("SELECT product.*,detail.*,user.id as owner_id
+        FROM product,shop,user ,`product-detail` as detail where product.product_id = detail.product_id and
+            product.shop_id=shop.shop_id and shop.owner_id= user.id and product.category_id IN (SELECT category_id from category where category_id IN (SELECT submenu_cat_id from submenus where menu_id IN (SELECT id FROM topnav where name='$category'))) ORDER BY rand() LIMIT 5
+");
 //        SELECT product.*,detail.*,user.id as owner_id
 //            FROM product,shop,user ,`product-detail` as detail where product.product_id = detail.product_id and
 //            product.shop_id=shop.shop_id and shop.owner_id= user.id product.category_id=(SELECT  category_id from category where category_id=(SELECT submenu_cat_id from submenus where menu_id=(SELECT id FROM topnav where name='$category') )) ORDER BY rand() LIMIT 5
@@ -50,9 +51,9 @@ class Mdl_product extends Model {
     }
 
     public function owner_product_list() {
-        $user_id = Session::get('user_id');
+        $shop_id = Session::get('shop_id');
         $res = $this->db->select("SELECT * from product,`product-detail`,category,subcategory 
-            where product.shop_id = (SELECT shop_id from shop where owner_id='$user_id') and product.product_id = `product-detail`.product_id and 
+            where product.shop_id = '$shop_id' and product.product_id = `product-detail`.product_id and 
             product.category_id=category.category_id and subcategory.id=product.subcategory_id");
         return $res;
     }

@@ -110,19 +110,20 @@ class User extends Controller {
         $this->view->renderModule('user', 'admin_user_employee');
     }
 
-    public function customer() {
-          if (isset($_GET['id'])) {
+    public function customer($detail_id=null) {
+       
+        if ($detail_id !=null) {
 
-            $this->view->detail = $this->model->detail();
+            $this->view->detail = $this->model->detail($detail_id);
         }
         $this->view->res = $this->model->customer();
         $this->view->renderModule('user', 'admin_user_customer');
     }
 
-    public function owner() {
-         if (isset($_GET['id'])) {
+    public function owner($detail_id=null) {
+           if ($detail_id !=null) {
 
-            $this->view->detail = $this->model->detail();
+            $this->view->detail = $this->model->detail($detail_id);
         }
         $this->view->res = $this->model->owner();
         $this->view->renderModule('user', 'admin_user_owner');

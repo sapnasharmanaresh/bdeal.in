@@ -1,3 +1,5 @@
+var baseurl = 'http://localhost/bdeal.in/';
+
 function fade(id) {
     $(id).fadeIn(2000).hide();
 }
@@ -158,8 +160,22 @@ function notification() {
 /*
  * 
  */
-function search(value) {
-    $.post('../search/employee', {
+function search_emp(value) {
+    $.post(baseurl + 'search/employee', {
+        'value': value
+    }, function(data) {
+        $('#result').html('Related Searches:<br/>' + data);
+    })
+}
+function search_customer(value) {
+    $.post(baseurl + 'search/customer', {
+        'value': value
+    }, function(data) {
+        $('#result').html('Related Searches:<br/>' + data);
+    })
+}
+function search_owner(value) {
+    $.post(baseurl + 'search/owner', {
         'value': value
     }, function(data) {
         $('#result').html('Related Searches:<br/>' + data);
@@ -213,46 +229,23 @@ function mail_selection(value) {
     }
 }
 //alert(1);
-function graph(myData,title,vAxis,hAxis,divID){
-//myD = JSON.stringify(myData);
-//alert(myData);
-//alert(title);
 
-///myD = JSON.parse(myData);
-//alert(myData.replace(/"/g,' '));
-console.log(divID);
-     google.load("visualization", "1", {packages:["corechart"],callback:drawChart});
-  //  google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = new google.visualization.DataTable();
-      data.addColumn('number','a');
-     data.addColumn('number','b');
-          data.addRows([
-                        
-	   ]);
-
-        var options = {
-          title: title,
-		  vAxis: {title:vAxis},
-		  hAxis: {title:hAxis}
-        };
-
-        var chart = new google.visualization.ComboChart(document.getElementById(divID));
-        chart.draw(data, options);
-      }
-}
-
-$('userGraph').click(function(){
-    gra();
-})
-
-function gra(){
-    alert("gra");
-}
 
 function changePhoto(){
     $('#updatePhoto').show();
 }
 function showPasswordPanel(){
     $('#passwordPanel').show();
+}
+
+function deleteMenu($pos) {
+    alert($pos);
+    var con = confirm('Are you sure? ');
+    if (con == true) {
+        $.post('deleteMenu', {
+            'menu_pos': $pos
+        }, function(data) {
+
+        })
+    }
 }

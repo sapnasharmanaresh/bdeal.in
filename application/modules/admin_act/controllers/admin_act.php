@@ -24,6 +24,10 @@ class Admin_act  extends Controller{
     }
     public function dashboard(){
       $this->header('Admin Accounts');
+      $this->userGraph();
+        $this->visitors();
+           $this->view->renderModule('admin_act', 'admin_home');
+      
     }
     
     public function total_amount(){
@@ -50,7 +54,13 @@ class Admin_act  extends Controller{
           Session::destroy();
         header('Location:' . BASEURL);
     }
-    
+     public function userGraph() {
+        $this->view->myData = $this->model->userGraph();
+    }
+
+    public function visitors() {
+        $this->view->visitorsData = $this->model->visitors();
+    }
     public function shopsDetail(){
         $this->header('Shop Detail');
         $this->view->module = 'shop';

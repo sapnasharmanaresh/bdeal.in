@@ -8,7 +8,7 @@ class PriceAlert extends Controller {
     }
     
     public function setPriceAlert($product_id){
-   
+   if(isset($_POST['setalert'])){
         if(!isset($_SESSION['loggedIn'])){
             echo "<script>alert('Kindly login to set price alert')</script>";
         }
@@ -16,9 +16,12 @@ class PriceAlert extends Controller {
         else{
         
         $this->model->setPriceAlert($product_id);
+        
         }
-        $this->view->renderModule('pricealert','vpricealert');
+        }
+        $this->view->renderModule('priceAlert','vPriceAlert');
     }
+    
     public function sendPriceAlertMail(){
         
     }

@@ -1,6 +1,4 @@
 <div id="content">
-    <?php
-echo "<img src='".THIRD_PARTY."graphs/example2.png'  />";
-?>
+  <img src='<?php echo BASEURL.THIRD_PARTY."graphs/example5.png"; ?>'  />
 </div>
 

@@ -1,3 +1,4 @@
+
 <?php
 //print_r($this->prod);
 foreach($this->prod as $key => $value){
@@ -7,7 +8,7 @@ foreach($this->prod as $key => $value){
     
     <a href="product/display_detail/<?php echo $value['product_id']; ?>">
         <img src='<?php echo BASEURL.PRODUCT.$value['image'];
-	?>' height='100px' width='100px' >
+	?>' height='150px' width='100px' >
   <div class="product__name"><?php echo $value['name']; ?></div>  </a>
   <hr/>
   Price:<?php echo $value['price']; ?>

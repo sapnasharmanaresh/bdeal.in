@@ -13,7 +13,7 @@ if (isset($GET['id'])) {
     ?>
     <div id="detail">
         <div id="image">
-            <img src="<?php IMAGE . $value['image'] ?>">
+            <img src="<?php BASEURL.IMAGE . $value['image'] ?>">
         </div>
         <div id="info">
             <p>Firstname:<?php $value['firstname'] ?></p>
@@ -79,7 +79,7 @@ if (isset($GET['id'])) {
     
     Search<input type="text" name="search-table"> 
   List of all the Customers
-<table>
+<table class='table'>
     <tr>
         <th>Sr no</th>
         <th>Customer_name</th>
@@ -93,8 +93,8 @@ if (isset($GET['id'])) {
         <tr>
             <td><?php echo $i; ?></td>
             <td><?php echo $value['username']; ?></td>
-            <td><?php echo $value[''] ?></td>
-            <td><a href="?id=<?php echo $value['id']; ?>">More Details</a></td>
+            <td><?php echo $value['ordered-items'] ?></td>
+            <td><a href="<?php echo BASEURL ?>owner/customer/<?php echo $value['id']; ?>">More Details</a></td>
 
         </tr>
    

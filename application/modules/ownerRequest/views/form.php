@@ -1,10 +1,13 @@
 <?php // echo Hash::create('sha256', '9872639621', HASH_PASSWORD_KEY); ?>
-<div class="content wrapper">
+<div class="wrapper">
+<div class="main-content" style="margin-left: 100px;">
+     
     <div id='register' class="user-register">
         <span class='register__text'>Request Form</span>
-    
+     
     <form name="request" action="<?php echo BASEURL; ?>ownerRequest/form" method="post" enctype="multipart/form-data">
-    <table>
+     
+        <table>
         <tr>
             <td> <input type="text" name="name" placeholder="Your name"></td>
         </tr>
@@ -26,7 +29,7 @@
            <td> <input type="text" name="deal" placeholder="deal %"></td>
        </tr>
        <tr>
-           <td>Product list with full info(.xls or .csv)<input type="file" name="product_list"></td>
+           <td>Product list with full info(.xls or .csv)<input type="file" name="product_list"><a class="btn" href="<?php echo BASEURL. PRODUCT_XLS ?>sample.xlsx">Check sample</a></td>
        </tr>
        <tr>
            <td>Upload product images folder (.zip)<input type="file" name="product_image"></td>
@@ -36,7 +39,9 @@
        </tr>
     </table>
     </form>
-  
+  <div class="error"><?php if(isset($this->error)){
+        echo $this->error;
+        } ?></div>
     <p>If posted request then you can track ur request id</p><a class="btn-color3"href='<?php echo BASEURL; ?>ownerRequest/track'>Track</a>
     <?php
     ?>
@@ -48,5 +53,6 @@
 </div>
 <div class="lightbox-content">
     
+</div>
 </div>
 </div>

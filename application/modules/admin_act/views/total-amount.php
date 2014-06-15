@@ -1,3 +1,3 @@
-<div class="aligncenter">
-Total amount in account : <?php echo $this->total; ?>
+<div class="aligncenter block-border">
+Total amount in account : <b class="font-1__text2"><?php echo $this->total; ?></b>
 </div>

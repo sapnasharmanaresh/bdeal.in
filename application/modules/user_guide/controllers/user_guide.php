@@ -22,7 +22,8 @@ class User_guide extends Controller {
     }
     
     public function employees(){
-        
+             $this->header('Developers docs');
+        $this->view->renderModule('user_guide','employees/home');
         
     }
     public function admin($file = false){
@@ -34,7 +35,9 @@ class User_guide extends Controller {
         }
        $this->header('Admin Docs');
        //$this->view->module = 'user_guide';
-       $this->view->renderModule('user_guide',$f);
+ //      $this->view->renderModule('user_guide',$f);
+       $this->view->module = 'user_guide';
+       $this->view->file = 'admin_home';
        $this->view->moduleNav = 'user_guide';
         $this->view->fileNav = 'admin_navigation';
         $this->view->renderModule('user_guide','template');
@@ -69,7 +72,8 @@ class User_guide extends Controller {
         $this->view->renderModule('user_guide','developers/home');
     }
     public function owners(){
-        
+             $this->header('Developers docs');
+        $this->view->renderModule('user_guide','owner/home');
     }
 
 }

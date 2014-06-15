@@ -17,13 +17,14 @@
                 <li><a id="request" href="<?php echo BASEURL ?>admin/ownership">Ownership Request</a></li>
                 <li><a id="adver-request" href="<?php echo BASEURL ?>admin/advertisement">Advertisement Request</a></li>
                 <li><a id="mail" href="<?php echo BASEURL ?>admin/mail">Mail</a></li>
-                <li><a href="">Employee Salaries</a>
+                <li><a href="<?php echo BASEURL ?>admin/salaries">Employee Salaries</a>
                 <?php
                 /**
                  * admin can change the value of salaries acc to time
                  */
                 ?>
                 </li>
+                   <li><a href="<?php echo BASEURL ?>admin/rates">Rates</a></li>
             </ul>    
         </li>
         <li><a href="">Users</a>

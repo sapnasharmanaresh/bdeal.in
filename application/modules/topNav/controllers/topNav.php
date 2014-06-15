@@ -42,21 +42,15 @@ class TopNav extends Controller{
          }
     }
     public function manageWelcomeNav(){
-          if(isset($_POST['saveShopMenus'])){
+          if(isset($_POST['saveWelcomeMenus'])){
+              echo 'fsfs';
             $this->model->saveMenus();
         }
         $this->view->res = $this->model->listmenus();
         $this->view->renderModule('topNav','home');
     }     
          
-    public function listAll(){
-        $this->listMenus();
-        $this->view->renderModule('topNav','display_all');
-    }
-    
-      public function addSubmenu(){
-        $this->model->addSubmenu();
-    }
+  
     
       public function deleteMenu(){
           $this->model->deleteMenu();

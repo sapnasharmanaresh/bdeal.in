@@ -6,10 +6,14 @@ class Pdf extends Controller {
         $this->loadModel('pdf');
     }
 
-    public function generate(){
-     $this->view->detail = $this->model->generate();
+    public function productDetail(){
+     $this->view->detail = $this->model->productDetail();
         $this->view->renderModule('pdf','generate');
         
+    }
+    
+    public function invoice(){
+        $this->model->invoice();
     }
 }
 ?>

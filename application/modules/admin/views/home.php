@@ -6,7 +6,6 @@
 <div id="notification-panel" class="right notify-panel color3">
     <?php Modules::run('notification', 'getNotification'); ?>
 </div>
-
-<div id="userGraph" class="graph color1 left"></div>
-<div id="visitors" class="graph color2 left"></div>
+<div id="userGraph" class="graph-lg color1 left"></div>
+<div id="visitors" class="graph-lg color2 left"></div>
 </section>

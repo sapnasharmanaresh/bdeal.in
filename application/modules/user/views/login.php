@@ -11,11 +11,11 @@
             <input type="password" name="password" placeholder="Password"><br/>
             <input type="submit" name="submit" value="Login">
         </form>
-<?php
+<div class='error'><?php
         if (isset($this->msg)) {
             echo $this->msg;
-        }
-        ?>
+        }echo '<br/>'
+        ?></div>
         If you don't have an account <span class='register__link'><a href='#register'>Register here</a></span>
     </div>
     <div class='clearfix'></div>

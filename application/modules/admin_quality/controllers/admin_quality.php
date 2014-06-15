@@ -12,13 +12,20 @@ class Admin_Quality extends Controller{
             header('Location:'.BASEURL.'user/login');
             exit;
         }
-          $this->loadModel('quality');
+          $this->loadModel('admin_quality');
         
     }
 
     public function header($title){
         Modules::run('header','emp',array($title));
         $this->view->renderModule('admin_quality','admin_navigation');
+    }
+     public function userGraph() {
+        $this->view->myData = $this->model->userGraph();
+    }
+
+    public function visitors() {
+        $this->view->visitorsData = $this->model->visitors();
     }
    
     function ownerRequest(){
@@ -44,7 +51,9 @@ class Admin_Quality extends Controller{
     public function home(){
         //echo "heya";
       $this->header('Dashboard');
-     
+     $this->userGraph();
+        $this->visitors();
+ 
         $this->view->renderModule('admin_quality','admin_home');
    
 

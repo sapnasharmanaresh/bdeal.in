@@ -5,7 +5,7 @@ class Shop extends Controller{
     function __construct() {
         parent::__construct();
         $this->loadModel('shop');
-       
+       @Session::init();
     }
     
     public function header($title,$shop_id){
@@ -17,7 +17,7 @@ class Shop extends Controller{
     public function visit($shop_name,$product_id=null){
        $shop_id = $this->model->shopId($shop_name);
          $this->view->shop = $this->model->shop($shop_id);
-      
+Session::set('shop_id', $shop_id);
       if($product_id==null){
             $this->header($this->view->shop[0]['homepageTitle'],$shop_id);
         $this->view->products = $this->model->productsInShop($shop_id);
@@ -34,7 +34,7 @@ class Shop extends Controller{
     }
   
     public function detail(){
-        $this->getList();
+        $this->view->shops  = $this->model->shop_detail();
         $this->view->renderModule('shop','complete_detail');
     }
     
@@ -62,4 +62,25 @@ class Shop extends Controller{
         $this->view->renderModule('shop','shop_thumb');
     }
 
+   public function category($cat_name, $subcat_name = false) {
+        if ($subcat_name == false) {
+            $shop_id = Session::get('shop_id');
+            $this->header($cat_name . " | Detail",$shop_id);
+            $this->view->cat = $cat_name;
+            $this->view->subcat = $this->model->subcategory_list($cat_name);
+
+            $this->view->renderModule('product', 'subcategory_list');
+        } else {
+            $this->header($subcat_name . " | Detail");
+
+            $this->view->moduleSideBar = 'search';
+            $this->view->fileSideBar = 'searchSidebar';
+            $this->view->dataSideBar = array($cat_name, $subcat_name);
+            $this->view->module = 'product';
+            $this->view->file = 'prod_thumbnail';
+            $this->view->data = array($cat_name, $subcat_name);
+            $this->view->renderModule('product', 'template');
+        }
+        $this->footer();
+    }
 }

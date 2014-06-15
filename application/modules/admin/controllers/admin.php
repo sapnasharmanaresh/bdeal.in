@@ -109,7 +109,7 @@ class Admin extends Controller {
         $this->adminHeader('Sales Status');
         $this->view->module = 'sales';
         $this->view->file = 'salesStatus';
-        $this->view->data =array( 'admin');
+        $this->view->data = array('admin');
         $this->view->renderModule('admin', 'template');
 
         //    Modules::run('sales', 'salesStatus');
@@ -119,36 +119,18 @@ class Admin extends Controller {
 
         $this->adminHeader('Manage Navigation');
 
-       $this->view->module = 'topNav';
+        $this->view->module = 'topNav';
         $this->view->file = 'manageWelcomeNav';
 
         $this->view->renderModule('admin', 'template');
     }
 
-   
-
-    public function listAll() {
-        Modules::run('topNav', 'listAll');
-    }
-
-    public function addMenu() {
-        Modules::run('topNav', 'addMenu');
-    }
-
-    public function addSubmenu() {
-        Modules::run('topNav', 'addSubmenu');
+    public function deleteMenu() {
+        Modules::run('topNav', 'deleteMenu');
     }
 
     public function navList() {
         Modules::run('topNav', 'navList');
-    }
-
-    public function positionNav() {
-        Modules::run('topNav', 'positionNav');
-    }
-
-    public function editSubmenu() {
-        Modules::run('topNav', 'editSubmenu');
     }
 
     public function analysis() {
@@ -179,33 +161,48 @@ class Admin extends Controller {
 
     public function notification() {
         $this->adminHeader('Admin | Notifications');
-$this->view->module = 'notification';
+        $this->view->module = 'notification';
         $this->view->file = 'allNotifications';
-      
+
         $this->view->renderModule('admin', 'template');
-      //  Modules::run('notification', 'allNotifications');
+        //  Modules::run('notification', 'allNotifications');
     }
 
-    public function employee($detail_id=null) {
+    public function employee($detail_id = null) {
+        
         $this->adminHeader('Employee');
         $this->view->module = 'user';
         $this->view->file = 'employee';
-        if($detail_id!=null){
-            $this->view->data = array('$detail_id');
+        if ($detail_id != null) {
+            $this->view->data = array($detail_id);
         }
-        
+
         $this->view->renderModule('admin', 'template');
         // Modules::run('user', 'employee');
     }
 
-    public function customer() {
+    public function customer($detail_id=null) {
         $this->adminHeader('Customers');
-        Modules::run('user', 'customer');
+            $this->view->module = 'user';
+        $this->view->file = 'customer';
+        if ($detail_id != null) {
+            $this->view->data = array($detail_id);
+        }
+
+        $this->view->renderModule('admin', 'template');
+        
     }
 
-    public function owner() {
+    public function owner($detail_id=null) {
         $this->adminHeader('Owner List');
-        Modules::run('user', 'owner');
+            $this->view->module = 'user';
+        $this->view->file = 'owner';
+        if ($detail_id != null) {
+            $this->view->data = array($detail_id);
+        }
+
+        $this->view->renderModule('admin', 'template');
+      
     }
 
     public function advertisement() {
@@ -219,17 +216,28 @@ $this->view->module = 'notification';
 
     public function mail() {
         $this->adminHeader("Mail");
-        Modules::run('mail', 'send_mail');
+        $this->view->module = 'mail';
+        $this->view->file = 'mailPage';
+        // $this->view->data = array('admin');
+        $this->view->renderModule('admin', 'template');
     }
 
     public function complaints() {
         $this->adminHeader("Complaints");
-        Modules::run('feedback', 'complaints');
+        $this->view->module = 'feedback';
+        $this->view->file = 'complaints';
+        // $this->view->data = array('admin');
+        $this->view->renderModule('admin', 'template');
+      //  Modules::run('feedback', 'complaints');
     }
 
     public function feedback() {
         $this->adminHeader("Feedback");
-        Modules::run('feedback', 'feedback');
+        $this->view->module = 'feedback';
+        $this->view->file = 'feedback';
+        // $this->view->data = array('admin');
+        $this->view->renderModule('admin', 'template');
+     //   Modules::run('feedback', 'feedback');
     }
 
     public function userGraph() {
@@ -242,7 +250,7 @@ $this->view->module = 'notification';
 
     public function settings($type) {
         $this->adminHeader('Settings');
-          $this->view->module = 'settings';
+        $this->view->module = 'settings';
         $this->view->file = 'admin';
         $this->view->data = array($type);
         $this->view->renderModule('admin', 'template');
@@ -258,7 +266,12 @@ $this->view->module = 'notification';
     }
 
     public function salaries() {
-        Modules::run('salary', '');
+        $this->adminHeader("Employee Salaries");
+        $this->view->module = 'salary';
+        $this->view->file = 'setSalaryAmount';
+        $this->view->data = array('admin');
+        $this->view->renderModule('admin', 'template');
+        //     Modules::run('salary', 'setSalaryAmount');
     }
 
     public function profile() {
@@ -268,18 +281,40 @@ $this->view->module = 'notification';
         $this->view->renderModule('admin', 'template');
         //Modules::run('profile','profile_detail');
     }
-    
-    
-    public function interact(){
-           $this->adminHeader("Chat");
+
+    public function interact() {
+        $this->adminHeader("Chat");
         $this->view->module = 'chat';
         $this->view->file = 'chatstart';
         $this->view->renderModule('admin', 'template');
     }
-    
-    public function chat(){
-        Modules::run('chat','getchat');
+
+    public function chat() {
+        Modules::run('chat', 'getchat');
+    }
+
+    public function rates() {
+        $this->adminHeader("Chat");
+        $this->view->module = 'rates';
+        $this->view->file = 'rates_detail';
+        $this->view->renderModule('admin', 'template');
+    }
+
+    public function createMail() {
+        $this->adminHeader('Create New Mail');
+        $this->view->module = 'mail';
+        $this->view->file = 'create_mail';
+        $this->view->renderModule('admin', 'template');
+    }
+
+    public function sendMail() {
+        $this->adminHeader('Send Mail');
+
+        $this->view->module = 'mail';
+        $this->view->file = 'send_mail';
+        $this->view->renderModule('admin', 'template');
     }
 
 }
+
 ?>

@@ -8,17 +8,17 @@ Shop Navigation can get 7 items and their submenus can be added
     <?php
     //print_r($this->res);
     foreach($this->res as $key=>$value){
-        
+     $menu_pos[$key] = $value['menu_pos'];   
+    $pos[$key] = $value['menu_name'];
     
     }
-    for ($i = 1; $i <= 7; $i++) {
+    for ($i = 0; $i <= 6; $i++) {
             ?>
             <tr>
                 <td>Menu <?php echo $i; ?></td>
-                <td><input type='text' name='menu<?php echo $i ?>' value='<?php   if($value['menu_pos']==$i)echo $value['menu_name']; ?>'> 
-                    <button onclick='submenus(<?php echo $i ?>);return false;'>+check Submenus</button>
-                      <button onclick='addSubmenu(<?php echo $i ?>);return false;'>+add Submenu</button>
-                    <button  onclick='deleteMenu(<?php echo $i ?>);return false;'>-delete Menu</button>
+                <td><input type='text' name='menu<?php echo $i ?>' value='<?php  if($pos[$i])echo $pos[$i]; else NULL; ?>'> 
+                  
+                    <button  onclick='deleteMenu(<?php echo $menu_pos[$i]; ?>);return false;'>-delete Menu</button>
                 </td>
             </tr>
             <?php

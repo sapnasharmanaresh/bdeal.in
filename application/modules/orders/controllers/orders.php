@@ -21,10 +21,18 @@ class Orders extends Controller{
         $this->model->complete_order_list();
     }
     
-    public function currentOrders(){
-        
+    public function mallCurrentOrders(){
+       $this->view->res = $this->model->mallCurrentOrders();
+       $this->view->renderModule('orders','mallOrders');
     }
-    public function pastOrders(){
+    public function mallPastOrders(){
+	 $this->view->res = $this->model->mallPastOrders();
+       $this->view->renderModule('orders','mallOrders');
+	}
+    public function customerCurrentOrders(){
+		
+	}
+    public function customerPastOrders(){
         
     }
     

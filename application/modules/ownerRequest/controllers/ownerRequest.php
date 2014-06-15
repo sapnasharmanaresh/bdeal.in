@@ -7,8 +7,8 @@ class OwnerRequest extends Controller {
         $this->loadModel('ownerRequest');
     }
 
-    public function header() {
-        Modules::run('header', 'ownerrequest', array('Ownership Request'));
+    public function header($title) {
+        Modules::run('header', 'ownerrequest', array($title));
         Modules::run('template', 'welcomeNav');
     }
     public function footer(){
@@ -16,13 +16,14 @@ class OwnerRequest extends Controller {
     }
 
     function form() {
-        $this->header();
+        $this->header('Ownership Request');
         $this->view->error = $this->model->send();
         $this->view->renderModule('ownerRequest', 'form');
         $this->footer();
     }
 
     public function track() {
+        $this->header('Track Ownership request');
         $this->view->res = $this->model->track();
         //print_r($this->view->res);
         $this->view->renderModule('ownerRequest', 'track');

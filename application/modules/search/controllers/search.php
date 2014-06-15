@@ -11,7 +11,14 @@ class Search extends Controller {
         $this->view->result = $this->model->employee();
         $this->view->renderModule('search', 'search_employee');
     }
-
+     public function customer() {
+        $this->view->result = $this->model->customer();
+        $this->view->renderModule('search', 'search_customer');
+    }
+    public function  owner() {
+        $this->view->result = $this->model->owner();
+        $this->view->renderModule('search', 'search_owner');
+    }
     public function searchBar() {
         $this->view->renderModule('search', 'searchBar');
     }
@@ -54,7 +61,8 @@ class Search extends Controller {
 
     public function searchSidebar($cat_name,$subcat_name) {
        $this->view->product = $this->model->searchSidebar($cat_name,$subcat_name);
-        $this->view->renderModule('search', 'searchCategory');
+    //
+       $this->view->renderModule('search', 'searchCategory');
     }
 
 }

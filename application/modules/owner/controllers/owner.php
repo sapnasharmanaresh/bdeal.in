@@ -14,10 +14,14 @@ class Owner extends Controller {
         parent::loadModel('owner', 'owner');
     }
 
-    public function owner() {
+    public function dashboard() {
 
         $this->header('Owner | Home');
+         $this->userGraph();
+        $this->visitors();
         $this->view->renderModule('owner', 'owner');
+         
+        
         Modules::run('shop', 'ownerShopName');
     }
 
@@ -143,7 +147,10 @@ class Owner extends Controller {
 
     public function customer() {
         $this->header('Customer');
-        Modules::run('user', 'owner_customer');
+        $this->view->module = 'user';
+        $this->view->file = 'owner_customer';
+        $this->view->renderModule('owner', 'template');
+     //   Modules::run('user', 'owner_customer');
     }
 
     public function orders() {
@@ -155,9 +162,26 @@ class Owner extends Controller {
     }
 
     public function email() {
-        Modules::run('mail', 'owner_mail');
+         $this->header('Email');
+          $this->view->module = 'mail';
+        $this->view->file = 'mailPage';
+        $this->view->renderModule('owner', 'template');
+      //  Modules::run('mail', 'mailPage');
+    }
+  public function createMail() {
+        $this->header('Create New Mail');
+        $this->view->module = 'mail';
+        $this->view->file = 'create_mail';
+        $this->view->renderModule('owner', 'template');
     }
 
+    public function sendMail() {
+        $this->header('Send Mail');
+
+        $this->view->module = 'mail';
+        $this->view->file = 'send_mail';
+        $this->view->renderModule('owner', 'template');
+    }
     public function coupon() {
         $this->header('Coupon');
         $this->view->module = 'coupon';
@@ -238,14 +262,15 @@ class Owner extends Controller {
         $this->view->renderModule('owner', 'template');
     }
 
-    public function empSalary() {
-        $this->header('Employee Salary');
+  public function empSalary() {
+        $this->header("Employee Salaries");
         $this->view->module = 'salary';
-        $this->view->file = 'getSalaryAmount';
+        $this->view->file = 'setSalaryAmount';
+        $this->view->data =array('owner');
         $this->view->renderModule('owner', 'template');
-    
-        
+        //     Modules::run('salary', 'setSalaryAmount');
     }
+    
     public function set_mail(){
         Modules::run('mail','newTemplate');
     }
@@ -253,7 +278,24 @@ class Owner extends Controller {
    public function send_mail(){
        Modules::run('mail','send_mail');
    }
+   
+   public function invoice(){
+      $this->header("Customer Invoice");
+        $this->view->module = 'invoice';
+        $this->view->file = 'generate';
+     
+        $this->view->renderModule('owner', 'template');
+      }
 
+     public function userGraph() {
+        $this->view->myData = $this->model->userGraph();
+     
+    }
+
+    public function visitors() {
+        $this->view->visitorsData = $this->model->visitors();
+    
+    }
 }
 
 ?>

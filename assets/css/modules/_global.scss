@@ -73,3 +73,13 @@ hr{
 .container80{
     @include container(80%);
 }
+.error{
+    font-size: 0.8em;
+    color: red;
+    font-weight: bold;
+}
+.success{
+      font-size: 0.8em;
+    color: $color4;
+    font-weight: bold;
+}

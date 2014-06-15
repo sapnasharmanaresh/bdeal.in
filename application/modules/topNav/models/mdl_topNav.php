@@ -16,10 +16,10 @@ class Mdl_topNav extends Model {
     public function subCategory($name) {
         //echo $name
         if ($name == 'Shops') {
-            $val = $this->db->select("SELECT shop_id as id,shop_name as submenu_name from shop");
+            $val = $this->db->select("SELECT shop_id as id,shop_name as subname from shop");
         } else {
             //  $val = $this->db->select("SELECT * FROM submenus where menu_id=(SELECT id from topNav where name='$name')");
-            $val = $this->db->select("SELECT category.category_id as id,category.category_name as submenu_name FROM topnav 
+            $val = $this->db->select("SELECT category.category_id as id,category.category_name as subname FROM topnav 
                                                                 LEFT JOIN submenus on  topnav.id=submenus.menu_id
                                                                 LEFT JOIN category ON submenus.submenu_cat_id = category.category_id
                                                                 LEFT JOIN subcategory ON subcategory.category_id = category.category_id where topnav.name='$name'");
@@ -29,10 +29,7 @@ class Mdl_topNav extends Model {
         return $val;
     }
 
-    public function addMenu() {
-        $cat = $this->category();
-        return count($cat);
-    }
+    
 
     public function positionNav() {
         echo $menu = $_POST['menu'];
@@ -91,7 +88,7 @@ class Mdl_topNav extends Model {
         $value = $_POST['value'];
 
         $this->db->update('submenus', array(
-            'submenu_name' => $value
+            'subname' => $value
                 ), "`id`='$id'");
         echo $value;
     }
@@ -121,40 +118,40 @@ class Mdl_topNav extends Model {
     }
 
     public function addSubmenu() {
-        $menu_pos = $_POST['menu_pos'];
+        $position = $_POST['position'];
         $shop_id = Session::get('shop_id');
         $submenu = $_POST['submenu'];
-      $res = $this->db->select("SELECT id FROM shopnav where shop_id ='$shop_id' and menu_pos='$menu_pos'");
-        $this->db->insert('shopnavsubmenu', array(
+      $res = $this->db->select("SELECT id FROM topnav where  and position='$position'");
+        $this->db->insert('topnavsubmenu', array(
             'menu_id' => $res[0]['id'],
-            'submenu_name' => $submenu
+            'subname' => $submenu
         ));
     }
 
-     public function delteSubmenu($menu_pos) {
+     public function delteSubmenu($position) {
         $shop_id = Session::get('shop_id');
         $submenu = $_POST['submenu'];
-      $res = $this->db->select("SELECT id FROM shopnav where shop_id ='$shop_id' and menu_pos='$menu_pos'");
+      $res = $this->db->select("SELECT id FROM topnav where  and position='$position'");
       $menu_id = $res[0]['id'];
-        $this->db->delete('shopnavsubmenu', "
+        $this->db->delete('topnavsubmenu', "
             menu_id => $menu_id,
-            submenu_name='$submenu'"
+            subname='$submenu'"
         );
     }
  
 
     public function deleteMenu(){
-         $shop_id = Session::get('shop_id');
          $del = $_POST['menu_pos'];
-             $this->db->delete('shopnav'," shop_id ='$shop_id' and
-                menu_pos='$del'");
+         echo $del;
+             $this->db->update('topnav',
+                     array(
+                         'name'=>''
+                     )," position='$del'");
                 
         
     }
     public function saveMenus() {
-        
-      
-        $shop_id = Session::get('shop_id');
+ echo 'sdd';
         $menu1 = $_POST['menu1'];
         $menu2 = $_POST['menu2'];
         $menu3 = $_POST['menu3'];
@@ -165,156 +162,130 @@ class Mdl_topNav extends Model {
        
         if ($menu1) {
           
-            $res1 = $this->db->select("SELECT * FROM shopnav where shop_id='$shop_id' and menu_pos='1'");
+            $res1 = $this->db->select("SELECT * FROM topnav where position='1'");
             if(count($res1)>0){
-                  $this->db->update('shopnav', array(
-               
-                'menu_name' => $menu1
-            )," shop_id ='$shop_id' and
-                menu_pos='1'");
+                  $this->db->update('topnav', array(
+                    'name' => $menu1
+            )," position='1'");
                 
             }
             else{
-                $this->db->insert('shopnav', array(
-                'shop_id' => $shop_id,
-                'menu_pos' => '1',
-                'menu_name' => $menu1
+                $this->db->insert('topnav', array(
+                    'position' => '1',
+                    'name' => $menu1
             ));
             }
         }
         if ($menu2) {
-            
-            $res2 = $this->db->select("SELECT * FROM shopnav where shop_id='$shop_id' and menu_pos='2'");
+             $res2 = $this->db->select("SELECT * FROM topnav where position='2'");
             if(count($res2)>0){
-                  $this->db->update('shopnav', array(
+                  $this->db->update('topnav', array(
                
-                'menu_name' => $menu2
-            )," shop_id ='$shop_id' and
-                menu_pos='2'");
+                'name' => $menu2
+            )," position='2'");
                 
             }
             else{
-            $this->db->insert('shopnav', array(
-                'shop_id' => $shop_id,
-                'menu_pos' => '2',
-                'menu_name' => $menu2
+            $this->db->insert('topnav', array(
+                 'position' => '2',
+                'name' => $menu2
             ));
             }
         }
         if ($menu3) {
             
-            $res3 = $this->db->select("SELECT * FROM shopnav where shop_id='$shop_id' and menu_pos='3'");
+            $res3 = $this->db->select("SELECT * FROM topnav where position='3'");
             if(count($res3)>0){
-                  $this->db->update('shopnav', array(
-               
-                'menu_name' => $menu3
-            )," shop_id ='$shop_id' and
-                menu_pos='3'");
+                  $this->db->update('topnav', array(
+               'name' => $menu3
+            ),"position='3'");
                 
             }
             else{
-            $this->db->insert('shopnav', array(
-                'shop_id' => $shop_id,
-                'menu_pos' => '3',
-                'menu_name' => $menu3
+            $this->db->insert('topnav', array(
+                'position' => '3',
+                'name' => $menu3
             ));
             }
         }
         if ($menu4) {
-            
-            $res4 = $this->db->select("SELECT * FROM shopnav where shop_id='$shop_id' and menu_pos='4'");
+            $res4 = $this->db->select("SELECT * FROM topnav where position='4'");
             if(count($res4)>0){
-                  $this->db->update('shopnav', array(
-               
-                'menu_name' => $menu4
-            )," shop_id ='$shop_id' and
-                menu_pos='4'");
+                  $this->db->update('topnav', array(
+                'name' => $menu4
+            )," position='4'");
                 
             }
             else{
-        
-            $this->db->insert('shopnav', array(
-                'shop_id' => $shop_id,
-                'menu_pos' => '4',
-                'menu_name' => $menu4
+            $this->db->insert('topnav', array(
+                'position' => '4',
+                'name' => $menu4
             ));
             }
         }
         if ($menu5) {
-            
-            $res5 = $this->db->select("SELECT * FROM shopnav where shop_id='$shop_id' and menu_pos='5'");
+            $res5 = $this->db->select("SELECT * FROM topnav where position='5'");
             if(count($res5)>0){
-                  $this->db->update('shopnav', array(
-               
-                'menu_name' => $menu5
-            )," shop_id ='$shop_id' and
-                menu_pos='5'");
+                  $this->db->update('topnav', array(
+                'name' => $menu5
+            )," position='5'");
                 
             }
             else{
-            $this->db->insert('shopnav', array(
-                'shop_id' => $shop_id,
-                'menu_pos' => '5',
-                'menu_name' => $menu5
+            $this->db->insert('topnav', array(
+                'position' => '5',
+                'name' => $menu5
             ));
             }
         }
         if ($menu6) {
-            
-            $res6 = $this->db->select("SELECT * FROM shopnav where shop_id='$shop_id' and menu_pos='6'");
+              $res6 = $this->db->select("SELECT * FROM topnav where position='6'");
             if(count($res6)>0){
-                  $this->db->update('shopnav', array(
-               
-                'menu_name' => $menu6
-            )," shop_id ='$shop_id' and
-                menu_pos='6'");
+                  $this->db->update('topnav', array(
+                'name' => $menu6
+            )," position='6'");
                 
             }
             else{
-            $this->db->insert('shopnav', array(
-                'shop_id' => $shop_id,
-                'menu_pos' => '6',
-                'menu_name' => $menu6
+            $this->db->insert('topnav', array(
+                'position' => '6',
+                'name' => $menu6
             ));
             }
         }
         if ($menu7) {
-            
-            $res7 = $this->db->select("SELECT * FROM shopnav where shop_id='$shop_id' and menu_pos='7'");
+             $res7 = $this->db->select("SELECT * FROM topnav where position='7'");
             if(count($res7)>0){
-                  $this->db->update('shopnav', array(
-               
-                'menu_name' => $menu7
-            )," shop_id ='$shop_id' and
-                menu_pos='7'");
+                  $this->db->update('topnav', array(
+                'name' => $menu7
+            )," position='7'");
                 
             }
             else{
-            $this->db->insert('shopnav', array(
-                'shop_id' => $shop_id,
-                'menu_pos' => '7',
-                'menu_name' => $menu7
+            $this->db->insert('topnav', array(
+                'position' => '7',
+                'name' => $menu7
             ));
             }
         }
         echo 'Menu List Updated';
     }
 
-    public function listMenus($shop_id) {
+    public function listMenus() {
        // $shop_id = Session::get('shop_id');
-        $res = $this->db->select("SELECT * FROM shopnav where shop_id = '$shop_id' ORDER BY menu_pos asc");
+        $res = $this->db->select("SELECT * FROM topnav ORDER BY position asc");
         return $res;
     }
     public function submenus($shop_id,$menu=false){
         if($menu==false){
             //$shop_id = Session::get('shop_id');
-            $menu_pos = $_POST['menu_pos'];
-           $res = $this->db->select("SELECT * FROM shopnav where shop_id ='$shop_id' and menu_pos='$menu_pos'");
+            $position = $_POST['position'];
+           $res = $this->db->select("SELECT * FROM topnav where  and position='$position'");
            if(count($res)>0){
-           $menu = $res[0]['menu_name'];
+           $menu = $res[0]['name'];
            }
         }
-         $res = $this->db->select("SELECT * FROM shopnavsubmenu where menu_id = (SELECT id from shopnav where menu_name='$menu') ORDER BY submenu_pos asc");
+         $res = $this->db->select("SELECT * FROM topnavsubmenu where menu_id = (SELECT id from topnav where name='$menu') ORDER BY subposition asc");
         return $res;
     }
 

@@ -26,7 +26,9 @@ class Product extends Controller {
 
     public function display_thumbnail($category=null) {
         //    echo "display";
-        $this->view->prod = $this->display_product($category=null);
+    
+        $this->view->prod = $this->model->display_product($category);
+       
         $this->view->renderModule('product', 'product-thumbnail');
     }
 

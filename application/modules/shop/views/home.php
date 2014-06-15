@@ -15,10 +15,7 @@
  */
 ?>
 <section class="section3">
-    <img class="img" src="<?php echo BASEURL.ADVERTISEMENT ?>1.jpg" height="20%" width=30%">
-   <img class="img" src="<?php echo BASEURL.ADVERTISEMENT ?>2.jpg" height="20%" width=30%">
-   <img class="img" src="<?php echo BASEURL.ADVERTISEMENT ?>3.jpg" height="20%" width=30%">
-
+<?php Modules::run('advertisement','shopAdver')?>    
 </section>
 
 <?php
@@ -30,7 +27,7 @@
 ?>
 
 <section class="section4">
-            <?php Modules::run('product', 'display_thumbnail'); ?>
+            <?php Modules::run('product', 'display_thumbnail',array('Electronics')); ?>
 </section>
 <!--Other products are 
 <section class="row ">

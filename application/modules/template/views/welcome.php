@@ -10,10 +10,11 @@
  */
 ?>
 <section class="section3">
-    <img class="img" src="<?php echo ADVERTISEMENT ?>1.jpg" height="20%" width=30%">
+    <?php Modules::run('advertisement','welcomePage');?>
+    <!--<img class="img" src="<?php echo ADVERTISEMENT ?>1.jpg" height="20%" width=30%">
    <img class="img" src="<?php echo ADVERTISEMENT ?>2.jpg" height="20%" width=30%">
    <img class="img" src="<?php echo ADVERTISEMENT ?>3.jpg" height="20%" width=30%">
-
+-->
 </section>
 <hr/>
 <section class="section4">

@@ -10,6 +10,47 @@
             </bookmark>
         </file>
     </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/template/views/admin-purchase.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/admin_purchase/controllers/admin_purchase.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/admin_purchase/models/mdl_admin_purchase.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/analysis/controllers/analysis.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/user/models/mdl_user.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/user/controllers/user.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/owner/controllers/owner.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/purchase/controllers/purchase.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/account/controllers/account.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/account/views/adminAccountDept.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/sales/controllers/sales.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/owner_sales/controllers/owner_sales.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/owner_sales/models/mdl_owner_sales.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/template/controllers/template.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/owner_sales/views/navigation.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/orders/controllers/orders.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/orders/models/mdl_orders.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/orders/views/owner_order_list.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/product/controllers/product.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/salary/controllers/salary.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/salary/views/v-salary.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/salary/models/mdl_salary.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/admin/controllers/admin.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/salary/views/setSalary.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/admin/views/navigation.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/rates/controllers/rates.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/rates/models/mdl_rates.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/rates/views/v-rates.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/topNav/models/mdl_topNav.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/user/views/admin_user_customer.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/user/views/admin_user_employee.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/user/views/admin_user_owner.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/analysis/models/mdl_analysis.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/invoice/controllers/invoice.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/invoice/models/mdl_invoice.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/invoice/views/v-invoice.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/pdf/controllers/pdf.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/pdf/models/mdl_pdf.php</file>
+        <file>file:/C:/wamp/www/bdeal.in/application/modules/pdf/views/generate.php</file>
+    </open-files>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group/>
     </open-files>

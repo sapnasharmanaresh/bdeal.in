@@ -11,13 +11,13 @@ $(document).ready(function(e) {
       $.post("check_email_avail",
         {username:username},
             function(result){
-               
-                   if(result == '1'){
-                        $("#result").html("Available");
+              
+                   if(result==false){
+                        $("#result").html("<div class='success'>Available</div>");
             }
-            else
+            else if(result == true)
                 {
-                    $("#result").html("not available");
+                    $("#result").html("<div class='error'>not available</div>");
                 }
         })
     }

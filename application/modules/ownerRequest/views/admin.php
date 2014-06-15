@@ -81,7 +81,7 @@
                     if($res[$i]['replyfromqualitydpt'] == 'Approved' and $res[$i]['status'] == 'Approved')
                     {   ?>
             <td class="no-border">
-                             <?php    echo $res[$i]['id']; ?> 
+                             
             <a id='assign' onclick="assign(<?php echo $res[$i]['id']; ?>)">Assign Login Credentials</a>  
                    </td>
                              <?php }

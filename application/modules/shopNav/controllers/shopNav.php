@@ -11,7 +11,7 @@ class ShopNav extends Controller {
             foreach($this->view->res as $key=>$value){
             $this->view->menu = $value['menu_name'];
          
-            $this->view->submenu= $this->model->submenus($shop_id,$value['menu_name']);
+      //      $this->view->submenu= $this->model->submenus($shop_id,$value['menu_name']);
         
            // print_r($this->view->submenu);
             $this->view->renderModule('shopNav','display_nav');

@@ -1,6 +1,6 @@
 <?php
 
-define('BASEURL', 'http://localhost/bdeal.comDesignV2/');
+define('BASEURL', 'http://localhost/bdeal.in/');
 define('APP', BASEURL . 'application');
 define('LIB', APP . 'libs');
 define('MODULE', 'application/modules/');
@@ -9,7 +9,7 @@ define('UPLOADS',  'assets/uploads/');
 define('CSS', BASEURL . 'assets/css/');
 define('JS', BASEURL . 'assets/js/');
 define('SETTINGS', 'assets/settings/');
-define('THIRD_PARTY', BASEURL . 'assets/third-party/');
+define('THIRD_PARTY', 'assets/third-party/');
 define('PRODUCT', UPLOADS . 'productImages/');
 define('SHOPLOGO', UPLOADS . 'shopLogo/');
 define('PROFILE_IMAGE', UPLOADS . 'userProfileImages/');
@@ -24,6 +24,6 @@ define('DIRECTORY_IMAGES', $_SERVER['DOCUMENT_ROOT'] . '/bdeal.comDesignV2/asset
 define('DIRECTORY_PRODUCT', 'assets/uploads/productImages/');
 define('DIRECTORY_SHOPLOGO', 'assets/uploads/shopLogo/');
 
-
+define('USER_GUIDE',UPLOADS.'/user_guide/');
 define('DESCRIPTION','assets/uploads/descriptionFiles/');
 ?>

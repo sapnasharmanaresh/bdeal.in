@@ -1,7 +1,9 @@
+<div class="aligncenter">
+<div class="main-content ">
 <form action='<?php echo BASEURL; ?>ownerRequest/track' method='post'>
     Enter your email-id(must be same as entered while submitting request)<br/>
     <input type='text' name='request_email'><br/>
-    <input type='submit' name='find'>
+    <input type='submit' name='find' class="btn-color3">
 </form>
 <?php
 if(isset($this->res)){
@@ -33,7 +35,7 @@ if(isset($this->res)){
                 }
                 echo "<br/>Stage 3 : Final Report => ";
                 if($status == "Approved" && $qlty == "Approved"){
-                    echo "You have been succesfully allotted Shop!!";
+                    echo "Bdeall will soon contact you !!";
                 }
                 elseif($status == "Rejected"){
                     echo "Sorry,We can't process your application Further!";
@@ -72,3 +74,6 @@ else
     <a href="<?php echo BASEURL;?>">Return to main page</a>
  </p>
 
+</div>
+
+</div>

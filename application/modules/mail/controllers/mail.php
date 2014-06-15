@@ -126,19 +126,9 @@ class Mail extends Controller {
         }
         $this->mail($to, $subject, $message);
     }
+   
     
-    public function newTemplate(){
-    
-        if(isset($_POST['save_mail'])){
-             echo  " dafd";
-            $this->model->saveTemplate();
-        }
-        $this->view->renderModule('mail','set_mail');
-    }
-    
-    public function send_mail(){
-        $this->view->renderModule('mail','send_mail');
-    }
+   
     
     public function new_user($id){
        
@@ -181,23 +171,39 @@ class Mail extends Controller {
     
     public function send_to_all(){
         $res = $this->model->send_mail();
-       print_r($res);
-       $group_mail = '';
-       foreach($res as $k=>$v){ 
-               $group_mail .= implode($v).',';
-       }$to ='sapnanaresh18@yahoo.com'; 
-      echo $subject = 'Hello';
-       $message = "Testing";
-        echo $group_mail;
-        try{
-      $this->mail($group_mail,$subject,$message);
-        }
-        catch(PDOException $e){
-         echo   $e->getMessage();
-        }
+		$subject = $_POST['subject'];
+		$message = $_POST['message'];
+       foreach($res as $v=>$email){
+			$to  = $email['email'];
+		
+			$this->mail($to,$subject,$message);
+	   }
+       
+     
+       echo 'Email has been sent!!';
+     
        }
+       
+       public function mailPage(){
+		$this->view->renderModule('mail','mailPage');
+	   }
+	   
+	   public function create_mail(){
+		    if(isset($_POST['save_mail'])){
+             echo  " dafd";
+            $this->model->saveTemplate();
+        }
+			$this->view->renderModule('mail','set_mail');
+	   }
+	   
+	   public function send_mail(){
+		   if(isset($_POST['send_mail'])){
+			$this->send_to_all();
+		}
+		$this->view->renderModule('mail','send_mail');
+	   }
     
-
+		
 }
 
 ?>

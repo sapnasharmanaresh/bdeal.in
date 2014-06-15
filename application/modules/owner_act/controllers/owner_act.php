@@ -24,6 +24,19 @@ class Owner_act  extends Controller{
     }
     public function dashboard(){
       $this->header('Owner Accounts');
+      $this->userGraph();
+        $this->visitors();
+           $this->view->renderModule('owner_act', 'home');
+    }
+    
+     public function userGraph() {
+        $this->view->myData = $this->model->userGraph();
+     
+    }
+
+    public function visitors() {
+        $this->view->visitorsData = $this->model->visitors();
+    
     }
     
     public function total_amount(){

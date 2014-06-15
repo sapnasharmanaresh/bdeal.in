@@ -9,16 +9,17 @@ class Sales extends Controller {
     public function department($role) {
         if ($role == 'admin') {
             $this->view->renderModule('sales', 'adminSalesDept');
-        }
-        else{
-              $this->view->renderModule('sales', 'ownerSalesDept');
+        } else {
+            $this->view->renderModule('sales', 'ownerSalesDept');
         }
     }
 
-   
-
-    function add_emp() {
-        Modules::run('user', 'add_admin_sales');
+    function add_emp($role) {
+        if ($role == 'admin') {
+            Modules::run('user', 'add_admin_sales');
+        } else {
+            Modules::run('user', 'add_owner_sales');
+        }
     }
 
     public function all_orders() {
@@ -38,9 +39,9 @@ class Sales extends Controller {
     }
 
     public function salesStatus($role) {
-        if($role=='admin'){
-        Modules::run('orders', 'salesStatus');
-    }
+        if ($role == 'admin') {
+            Modules::run('orders', 'salesStatus');
+        }
     }
 
 }

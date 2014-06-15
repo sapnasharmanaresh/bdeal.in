@@ -56,10 +56,27 @@ class Mdl_mail extends Model {
     }
     
     public function send_mail(){
-       //if all
-       $res =  $this->db->select("SELECT email from `user-detail`" );
-       return $res;
-       
+        $scope = $_POST['scope'];
+      
+       if($scope = 'All'){
+			$res =  $this->db->select("SELECT email from `user-detail`" );
+       }else if($scope = 'Employee'){
+			$res =  $this->db->select("SELECT email from `user-detail` where user_id IN (SELECT id from user where role_id IN (SELECT id from role where role NOT IN ('customer','owner','admin'))))" );
+	   }   else if($scope = 'Customer'){
+			$res =  $this->db->select("SELECT email from `user-detail` where user_id IN(SELECT id from user where role_id=(SELECT id from role where role='customer'))" );
+	   }  
+		else if($scope='Owner'){
+			$res =  $this->db->select("SELECT email from `user-detail` where user_id IN (SELECT id from user where role_id=(SELECT id from role where role='owner'))" );
+		}
+     return $res;
+ 
     }
+    
+    public function sendDefinedMail($name){
+		$res = $this->db->select("SELECT * FROM mail where reference_mail='$name'");
+		
+		
+		return $res;
+	}
 
 }

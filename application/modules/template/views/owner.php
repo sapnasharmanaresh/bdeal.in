@@ -1,3 +1,3 @@
 <?php
-Modules::run('owner','owner');
+Modules::run('owner','dashboard');
 ?>

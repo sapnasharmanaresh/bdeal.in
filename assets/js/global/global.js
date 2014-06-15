@@ -1,4 +1,4 @@
-var baseurl = "http://localhost/bdeal.comDesignV2/";
+var baseurl = "http://localhost/bdeal.in/";
 
 function cart(prod_id) {
     $.post(baseurl + 'cart/addToCart', {
@@ -6,7 +6,9 @@ function cart(prod_id) {
     }, function(data) {
         if (data == 1) {
             alert('Kindly login to add product in cart');
-        } else {
+        } else if(data == 2){
+            alert('This is for customers only');
+        }else{
             location.reload();
         }
     })
@@ -122,6 +124,42 @@ function search(value) {
 function submitSearch(){
     $('#search').submit();
 }
+
+function graph(myData,title,vAxis,hAxis,divID){
+	
+//myD = JSON.stringify(myData);
+//alert(myData);
+//alert(title);
+
+///myD = JSON.parse(myData);
+
+    google.load("visualization", "1", {packages:["corechart"],callback:drawChart});
+      //google.setOnLoadCallback(drawChart);
+      function drawChart() {
+         // var obj = jQuery.parseJSON(myData);
+            var data = google.visualization.arrayToDataTable(myData); 
+     
+      
+   
+      
+        var options = {
+                                         title: title,
+		  vAxis: {title:vAxis},
+		  hAxis: {title:hAxis}
+        };
+
+        var chart = new google.visualization.ComboChart(document.getElementById(divID));
+        chart.draw(data, options);
+      }
+
+}
+
+function lightbox(){
+   
+    alert(1);
+    $('#lightbox').show();
+}
+
 
 ///*
 //

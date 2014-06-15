@@ -1,7 +1,7 @@
 
 <?php
-if(isset($this->detail_id)){
-$detail_id = $this->detail_id;
+if(isset($this->detail)){
+
 
   foreach ($this->detail as $k => $v) {
       //print_r($this->detail);
@@ -10,7 +10,7 @@ $detail_id = $this->detail_id;
     ?>
     <div id="detail-box">
         <div class="image span_2_of_6">
-            <img src="<?php echo PROFILE_IMAGE . $v['image'] ?>">
+            <img src="<?php echo BASEURL.PROFILE_IMAGE . $v['image'] ?>">
         </div>
         <div class="info span_4_of_6">
             <p>Firstname:<?php echo $v['firstname'] ?></p>
@@ -24,12 +24,12 @@ $detail_id = $this->detail_id;
 
             <p>Contact:<?php echo $v['contact'] ?> </p>
 
-            <span><a href="#mail">Send Mail</a></span>
+            <span><a class='btn' href="#mail">Send Mail</a></span>
             <select onchange="mail_type(<?php echo $detail_id; ?>,this.value)">
                 <option>Warning</option>
                 <option>Compose </option>
             </select>
-            Account status<select onchange="account_status(<?php echo $_GET['id']?>,this.value)">
+            Account status<select onchange="account_status(<?php echo $v['user_id']?>,this.value)">
                 <option <?php if($v['status']=='Enable') echo"selected";?>>Enable</option>
                 <option <?php if($v['status']=='Disable') echo"selected";?>>Disable</option>
                 <option>Delete</option>
@@ -48,7 +48,7 @@ $detail_id = $this->detail_id;
     */
    ?>
     
-    Search<input type="text" id='search' onkeyup='search(this.value)' name="search-table"> 
+    Search<input type="text" id='search' onkeyup='search_emp(this.value)' name="search-table"> 
     
     <div id='result' ></div>
   List of all the employees

@@ -15,7 +15,7 @@
         list-style: none;
     }
     & >li{
-        margin-left : 10%;   
+        margin-left : 7%;   
         font-weight: bold;
         border-bottom: 5px solid $white;
         &:hover{
@@ -48,7 +48,8 @@
 }
 
 .nav2{
-    height: 100%;
+    //height: 100%;
+    height: 800px;
     @include span(2 of 12);
     background: url('img/bg2.png');
     color : $color-link;
@@ -84,7 +85,7 @@
 }
 .nav3{
     @extend .nav2;
-  
+        
     @include span(2 of 12 omega);
   
     

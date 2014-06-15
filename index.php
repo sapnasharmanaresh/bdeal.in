@@ -8,8 +8,8 @@ require_once ("assets/third-party/chart/pChart/pChart.class");
 require_once ('assets/third-party/mail/PHPMailerAutoload.php');
 //require_once 'vendor/autoload.php';
  require_once 'assets/third-party/excel/PHPExcel/IOFactory.php';
-require_once("assets/third-party/dompdf/dompdf_config.inc.php");
-require_once("assets/third-party/mustache\src\Mustache/Autoloader.php");
+require_once('assets/third-party/dompdf/dompdf_config.inc.php');
+require_once('assets/third-party/mustache/src/Mustache/Autoloader.php');
 
 
    function myloader($class){

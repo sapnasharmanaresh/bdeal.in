@@ -12,6 +12,10 @@ class Footer extends Controller {
     public function shopFooter(){
         $this->view->renderModule('footer','shopFooter');
     }
+    
+    public function profileFooter(){
+		$this->view->renderModule('footer','profileFooter');
+	}
 
 }
 ?>

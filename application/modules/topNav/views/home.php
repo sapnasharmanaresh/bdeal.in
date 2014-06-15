@@ -1,24 +1,24 @@
 Shop Navigation can get 7 items and their submenus can be added
-<form name='shopMenus' action='<?php echo BASEURL; ?>owner/shopNav' method='post'>
+<form name='shopMenus' action='<?php echo BASEURL; ?>admin/manageWelcomeNav' method='post'>
     <div class='right'>
-    <input type='submit' class='btn btn-color3' name='saveShopMenus' value='Save'>    
+    <input type='submit' class='btn btn-color3' name='saveWelcomeMenus' value='Save'>    
     </div>
     <table class='table'>
     
     <?php
-    //print_r($this->res);
-    foreach($this->res as $key=>$value){
-        
+    $pos = array();
     
+    foreach($this->res as $key=>$value){
+     $menu_pos[$key] = $value['position'];   
+    $pos[$key] = $value['name'];
     }
-    for ($i = 1; $i <= 7; $i++) {
+    for ($i = 0; $i <= 6; $i++) {
             ?>
             <tr>
                 <td>Menu <?php echo $i; ?></td>
-                <td><input type='text' name='menu<?php echo $i ?>' value='<?php   if($value['menu_pos']==$i)echo $value['menu_name']; ?>'> 
-                    <button onclick='submenus(<?php echo $i ?>);return false;'>+check Submenus</button>
-                      <button onclick='addSubmenu(<?php echo $i ?>);return false;'>+add Submenu</button>
-                    <button  onclick='deleteMenu(<?php echo $i ?>);return false;'>-delete Menu</button>
+                <td><input type='text' name='menu<?php echo $i ?>' value='<?php  if(isset($pos[$i]))echo $pos[$i]; else ''?>'> 
+                  
+                    <button  onclick='deleteMenu(<?php echo $menu_pos[$i]; ?>);return false;'>-delete Menu</button>
                 </td>
             </tr>
             <?php
@@ -28,8 +28,4 @@ Shop Navigation can get 7 items and their submenus can be added
 
     </table>
 </form>
-<?php
-if (isset($_GET['id'])) {
-    $menu_id = $_GET['id'];
-}
-?>
+

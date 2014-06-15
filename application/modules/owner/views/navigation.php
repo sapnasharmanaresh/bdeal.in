@@ -29,7 +29,7 @@
         </li>
         <li>Generate
             <ul>
-                <li><a href=''>Customer Invoice</a></li>
+                <li><a href='<?php echo BASEURL ?>owner/invoice'/>Customer Invoice</a></li>
             </ul>
         </li>
         

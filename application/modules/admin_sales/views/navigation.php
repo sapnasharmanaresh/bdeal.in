@@ -1,51 +1,26 @@
 <?php
 /**
- * Accounts department will manage only financial status of whole mall
- * and can interact with anybody
+ * Sales department will check all the orders from the shops 
+ * can get details of shop
+ * salary status of emp
+ * can interact with others 
  * 
  */
 
 ?>
-<section class='admin_section2'>
+<section class='section2'>
 <aside class='nav2'>
     <ul class="nav">
-        <li><a id="request" href="">Home</a></li>
+        <li><a id="request" href="<?php echo BASEURL ?>admin_sales/dashboard">Home</a></li>
 
 
         <li><a href="">Detail</a>
             <ul>
-
-                <li><a href='<?php echo BASEURL; ?>admin_act/shopsDetail'>Shops</a></li><?php
-                /*
-                 * how many shops
-                 * performace
-                 * decide rewards for shops and tl admin to clear dat
-                 */
-                ?>
-                <?php
-                /*
-                 * 
-                 * complete info abt shop , everything (product listing,items of each category)
-                 */
-                ?>
-                <li>Salary</li>
-                <?php
-                /**
-                 * Accounts dept of admin can see all transaction records of admin only
-                 * but only total amount in shop account 
-                 * only to decide admin portion in their total profit
-                 * 
-                 */
-                ?>
-
-                <li><a id="request" href="">Admin account</a></li>
-                <li><a id="request" href=''>Shops account</a></li><?php
-                    /*
-                     * deal wd each shop with der profit
-                     * complete transaction detail
-                     */
-                    ?>
-                <li>Email</li>
+				<li><a href='<?php echo BASEURL ?>admin_sales/currentOrders'>Current Orders</a></li>
+				<li><a href='<?php echo BASEURL ?>admin_sales/pastOrders'>Past Orders</a></li>
+                <li><a href='<?php echo BASEURL; ?>admin_sales/shopsDetail'>Shops</a></li>
+                <li><a href='<?php echo BASEURL ?>admin_sales/salary'>Salary</a></li>
+                <li><a href='<?php echo BASEURL ?>admin_sales/mail'>Email</a></li>
             </ul>    
         </li>
 
@@ -54,14 +29,14 @@
         <li>Analysis</li>
            
 
-        <li>Transactions</li>
-        <li>Interaction
+   
+        <li><a href='<?php echo BASEURL?>admin_sales/interaction'>Interaction</a>
             <?php
             /**
              * interaction page will give options to choose from 
              * admin
-             * shop account dept
-             * other admin accounts department
+             * shop sales dept
+             * other admin sales department
              */
             ?>
         </li>

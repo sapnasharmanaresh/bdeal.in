@@ -44,5 +44,14 @@ class Advertisement extends Controller {
         $this->view->res = $this->model->pastRecords($user_id);
         $this->view->renderModule('advertisement','past_records');
     }
+    
+    public function welcomePage(){
+        $this->view->adver = $this->model->welcomePageAdver();
+        $this->view->renderModule('advertisement','welcome_page');
+    }
+    
+    public function shopAdver(){
+        $this->view->renderModule('advertisement','welcome_page');
+    }
 }
 

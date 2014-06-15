@@ -18,8 +18,8 @@ class Notification extends Controller
     }
 
     public function getNotification()
-    {
-       $this->view->notif = $this->model->getNotification(7);
+    {$limit = 7;
+       $this->view->notif = $this->model->getNotification($limit);
        $this->view->renderModule('notification','admin_notificationBar');
      
     }

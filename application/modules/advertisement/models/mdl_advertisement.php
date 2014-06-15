@@ -96,5 +96,9 @@ class Mdl_advertisement extends Model {
        $res =  $this->db->select("SELECT req.id as request_id,req.to_user_id as request_to_user,req.dateOfRequest,req.status,req.quality_dept_report,advertisement.allottedDate as allottedFromDate,advertisement.totalDays+advertisement.allottedDate as allottedToDate FROM advertisementrequest as req LEFT JOIN advertisement on req.`from_user_id`=advertisement.owner_id where req.from_user_id='$user_id'");
        return $res;
     } 
+    
+    public function welcomePageAdver(){
+        $this->db->select('SELECT * FROM advertisement');
+    }
 
 }

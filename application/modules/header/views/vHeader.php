@@ -34,13 +34,13 @@
         }
         ?>
         <!-- scripts-->
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="<?php echo JS ?>vendor/jquery.js"></script>
+     <!--   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
        <!-- <script type="text/javascript" src="http://modernizr.com/downloads/modernizr-latest.js"></script>-->
         <script src ="<?php echo JS ?>global/global.js"></script>
-        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-
+        <!--<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>-->
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
 
 
 

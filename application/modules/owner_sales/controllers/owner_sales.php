@@ -1,6 +1,6 @@
 <?php
 
-class Admin_act  extends Controller{
+class Owner_sales  extends Controller{
 
     function __construct() {
         parent::__construct();
@@ -15,37 +15,36 @@ class Admin_act  extends Controller{
         }
      
        // echo Hash::create('sha256','bdeal',HASH_PASSWORD_KEY);
-       $this->loadModel('admin_act');
+       $this->loadModel('owner_sales');
     }
+    
     
     public function header($title){
         Modules::run('header','emp',array($title));
-        $this->view->renderModule('admin_act','navigation');
+        $this->shopId();
+        $this->view->renderModule('owner_sales','navigation');
     }
     public function dashboard(){
-      $this->header('Admin Accounts');
+      $this->header('Owner Sales');
+         $this->userGraph();
+        $this->visitors();
+        $this->view->renderModule('owner_sales', 'home');
+         
     }
+     public function userGraph() {
+        $this->view->myData = $this->model->userGraph();
+     
+    }
+
+    public function visitors() {
+        $this->view->visitorsData = $this->model->visitors();
     
-    public function total_amount(){
-        
-       $this->view->total = $this->model->total_amount();
-        $this->view->renderModule('admin_act','total-amount');
     }
-   
-    public function detail(){
-        $this->view->detail = $this->model->detail();
-        $this->view->renderModule('admin_act','full-detail');
-        
-    }
-    public function new_entry($email){
-    //    echo $email;
-        $this->model->new_entry($email);
-    }
-    
-    public function admin_act(){
-        $this->view->renderModule('admin_act','admin_account_home');
-    }
-    
+    public function shopId(){
+       $shop_id = $this->model->shopId();
+        Session::set('shop_id',$shop_id);
+        }
+  
     public function logout(){
           Session::destroy();
         header('Location:' . BASEURL);
@@ -55,15 +54,23 @@ class Admin_act  extends Controller{
         $this->header('Shop Detail');
         $this->view->module = 'shop';
         $this->view->file = 'detail';
-        $this->view->renderModule('admin_act','template');
+        $this->view->renderModule('owner_sales','template');
     } 
     
-    public function adminAccount(){
-          $this->header('Admin Account Detail');
-        $this->view->module = 'admin_act';
-        $this->view->file = 'full-detail';
-        $this->view->renderModule('admin_act','template');
+  
+    public function orders(){
+        $this->header('Order Details');
+         $this->view->module = 'orders';
+        $this->view->file = 'owner_order_list';
+        $this->view->renderModule('owner_sales','template');
+       
     }
-
+    
+    public function productList(){
+          $this->header('Product List');
+        $this->view->module = 'product';
+        $this->view->file = 'owner_product_list';
+        $this->view->renderModule('owner_sales', 'template');
+    }
 }
 ?>

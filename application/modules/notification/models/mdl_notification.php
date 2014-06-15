@@ -15,6 +15,7 @@ class Mdl_Notification extends Model {
     }
 
     public function getNotification($limit) {
+		$user_id = Session::get('user_id');
         $res = $this->db->select("SELECT * FROM notification order by timestamp desc Limit $limit");
         return $res;
     }

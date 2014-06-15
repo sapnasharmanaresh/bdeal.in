@@ -12,9 +12,14 @@ class Purchase  extends Controller{
             $this->view->renderModule('purchase','ownerPurchaseDept');
     }
    
-  function add_emp(){
+  function add_emp($role){
+      if($role == 'admin'){
        Modules::run('user','add_admin_purchase');
-    }
+       }
+       else{
+            Modules::run('user','add_owner_purchase');
+       }
+       }
     
     public function newStock(){
         Modules::run('stock','newStock');

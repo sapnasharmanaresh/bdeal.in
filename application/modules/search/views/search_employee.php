@@ -28,7 +28,7 @@
             <td><?php echo $value['username']; ?></td>
             <td><?php echo $role; ?></td>
             <td><?php echo $value['head']; ?></td>
-            <td><a href="<?php echo BASEURL.'admin/employee' ?>?id=<?php echo $value['id']; ?>">More Details</a></td>
+            <td><a href="<?php echo BASEURL.'admin/employee' ?>/<?php echo $value['id']; ?>">More Details</a></td>
 
         </tr>
     

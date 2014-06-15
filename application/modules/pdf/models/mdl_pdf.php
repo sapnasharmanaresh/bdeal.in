@@ -6,7 +6,7 @@ class Mdl_pdf extends Model {
     }
     
    
-    public function generate() {
+    public function productDetai() {
         $product_id = $_GET['id'];
         $detail = $this->db->select("SELECT product.*,detail.*,category.category_name,subcategory.subcategory,shop.shop_name                                                       
                                                             FROM product 

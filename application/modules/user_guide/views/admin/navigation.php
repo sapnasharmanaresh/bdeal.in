@@ -1,5 +1,5 @@
 
-<section class='guide_section2'>
+
     <aside class="nav3">
         <ul class='nav'>
             <li><a href='<?php echo BASEURL; ?>user_guide/admin/rights'>What can he do?</a></li>
@@ -23,5 +23,5 @@
 
         </ul>
     </aside>
-</section>
+
 
